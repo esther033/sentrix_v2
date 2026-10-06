@@ -1,0 +1,22 @@
+{
+  "run_id": "m2-pod-failure-checkoutservice-005",
+  "started_at": "2026-09-26T08:20:27.965912+00:00",
+  "errors": [],
+  "steps": {
+    "scripts/generate-run-manifest.py": 0,
+    "smoke/quality-check.py": 0,
+    "scripts/process-telemetry.py": 0,
+    "scripts/generate-incident-record.py": 0
+  },
+  "recorder_pid": 3500,
+  "elapsed_s": 1141.7,
+  "heartbeat_at": "2026-09-26T08:47:11.125855+00:00",
+  "fault_apply_elapsed": 420.6570000000065,
+  "workload_rc": 0,
+  "workload_elapsed_s": 1143.704000000027,
+  "phase": "finished",
+  "stage_pid": null,
+  "finished_at": "2026-09-26T08:47:13.145832+00:00",
+  "assessment_valid": true,
+  "complete": true
+}

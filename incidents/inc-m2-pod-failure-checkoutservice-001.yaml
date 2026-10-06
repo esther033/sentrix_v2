@@ -1,0 +1,105 @@
+incident_id: inc-m2-pod-failure-checkoutservice-001
+experiment_id: exp-m2-pod-failure-checkoutservice-001
+run_id: m2-pod-failure-checkoutservice-001
+control_run_id: m2-control-network-delay-002
+baseline:
+  control_run_dir: C:\Users\Rehtse\SentriX\scripts\..\runs\m2-control-network-delay-002
+  target_rps: 2
+  n_transactions: 1800
+  success_rate_pct: 100.0
+  p50_ms: 272
+  p99_ms: 528
+fault:
+  injected: true
+  type: pod_failure
+  cause_family: unknown
+  injection_layer: unknown
+  scope_kind: service_instance
+  root_cause_service: checkoutservice
+  target_pod_uid: cb547f28-1878-444d-9fe0-8509965bc0da
+  chaos_mesh_object: podchaos/m2-pod-failure-checkoutservice-001-fault
+  started_at: '2026-09-23T08:21:16.177305+00:00'
+  ended_at: '2026-09-23T08:26:15.857912+00:00'
+  removal_confidence: confirmed
+  injector_status: succeeded
+workload:
+  profile: m2-pod-failure-checkoutservice-pilot
+  target_rps: 2
+  actual_rps: 1.998
+  dropped_iterations: 3
+impact:
+  confirmed: true
+  critical_failure: error_rate_increase
+  affected_endpoint: checkout
+  impact_started_at: '2026-09-23T08:21:16.317000+00:00'
+  evaluation_policy_version: v3
+recovery:
+  fault_removed_at: '2026-09-23T08:26:15.857912+00:00'
+  transaction_observation:
+    profile: m2-pod-failure-checkoutservice-pilot
+    first_passing_at: '2026-09-23T08:28:11.815Z'
+    stable_at: null
+    observation_status: fail
+  evaluation_policy_version: v3
+status: abnormal_impacted
+data_views:
+  raw: runs/m2-pod-failure-checkoutservice-001/raw-v2/
+  canonical: runs/m2-pod-failure-checkoutservice-001/canonical-v2-377e64e7d0a3/
+  re2_compatible: runs/m2-pod-failure-checkoutservice-001/re2-v2-377e64e7d0a3/
+data_generation: v2
+data_validation:
+  run:
+    complete: true
+    raw_export_complete: true
+    views:
+      raw: raw-v2
+      canonical: canonical-v2-377e64e7d0a3
+      re2_compatible: re2-v2-377e64e7d0a3
+  control:
+    complete: true
+    raw_export_complete: true
+    views:
+      raw: raw-v2
+      canonical: canonical-v2-dffd29879b1c
+      re2_compatible: re2-v2-dffd29879b1c
+validity:
+  injector_succeeded: true
+  removal_confirmed: true
+  telemetry_present_all_signals: true
+  actual_rate_meets_minimum: true
+  runtime_assessment:
+    valid: true
+    errors: []
+    actual_rps: 1.9973684210526317
+    elapsed_s: 1139.5
+    started_at: '2026-09-23T08:14:12.814Z'
+    ended_at: '2026-09-23T08:33:12.314Z'
+    fingerprint: 91b2612f6785c45dbffd2c8df2b77eccbeb5122f18d9a4a031a874b9b948b12d
+    profile:
+      profile_name: m2-pod-failure-checkoutservice-pilot
+      description: 'M2 pod-failure pilot: bounded checkoutservice unavailability under
+        the matched 2 rps workload.'
+      target_rps: 2
+      time_unit: 1s
+      duration: 19m
+      warmup_seconds: 120
+      baseline_seconds: 300
+      fault_seconds: 300
+      recovery_seconds: 300
+      cooldown_seconds: 120
+      pre_allocated_vus: 10
+      max_vus: 50
+      stage_timeout: 5s
+      fault:
+        type: pod_failure
+        template: deploy/chaos-mesh/faults/pod-failure.yaml
+        root_cause_service: checkoutservice
+        params: {}
+  control_match:
+    valid: true
+    errors: []
+  dropped_iterations_under_threshold: true
+  raw_export_complete: true
+  data_views_complete: true
+  control_data_views_complete: true
+  is_valid_run: true

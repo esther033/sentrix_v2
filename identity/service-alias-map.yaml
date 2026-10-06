@@ -1,0 +1,68 @@
+# Canonical service identity resolution rules for Milestone 1.
+#
+# This file does NOT invent identity. It only maps a RAW identity string
+# (as it actually appears in a telemetry record) to a canonical_service_id,
+# for the cases where the raw string legitimately differs from the
+# canonical name (e.g. container/image name vs. logical service name).
+#
+# Resolution priority (highest first) -- see smoke/quality-check.py
+# resolve_canonical_identity() for the implementation. A record is
+# considered identity-resolved (VALID for identity purposes) if ANY of
+# these succeed; a record is INVALID only if none of them do. Per-record
+# resolution does NOT require every OTel identity field from
+# sentrix-project-context.md section 5 to be present -- that would fail
+# stdout logs and Kubernetes Events, which legitimately never carry
+# service.namespace/service.name.
+#
+#   1. OTel resource attributes: service.namespace + service.name
+#      (present on traces/metrics pushed via OTLP by the 7 instrumented
+#      services; see deploy/online-boutique/otlp-env-patch.yaml)
+#   2. k8s.namespace.name + k8s.deployment.name
+#      (added by the k8sattributes processor enrichment on logs/traces/
+#      metrics that pass through a Collector with that preset enabled)
+#   3. k8s.pod.uid or container.id
+#      (last-resort k8s-native identity when deployment name enrichment
+#      did not attach, e.g. very early in pod startup)
+#   4. Prometheus source-native labels: namespace / pod / container / job
+#      (kube-state-metrics, node-exporter, and other non-OTel metric
+#      sources that never carry OTel resource attributes at all)
+#   5. This alias map (raw_service_id -> canonical_service_id), consulted
+#      only when none of 1-4 produced a name that matches a known
+#      canonical service below.
+#
+# A record that exhausts all five without resolving is INVALID and is
+# listed in the run's quality-report.json, never silently merged.
+mapping_version: 1
+
+canonical_services:
+  - frontend
+  - checkoutservice
+  - cartservice
+  - productcatalogservice
+  - currencyservice
+  - paymentservice
+  - shippingservice
+  - emailservice
+  - recommendationservice
+  - adservice
+  - redis-cart
+
+# raw_service_id -> canonical_service_id overrides. Empty for the pinned
+# v0.9.0 manifest: Kubernetes object names (Deployment/Service/container
+# names) and the OTEL_SERVICE_NAME values we set already equal the
+# canonical names 1:1. Populate this only when a real mismatch is found
+# (e.g. a future image tag changes a binary/container name), never
+# speculatively.
+aliases: {}
+
+# Services with NO tracing instrumentation in the pinned commit
+# (d138db567079e2ef982d46b2993f8349cb18e2b2 / v0.9.0). Confirmed by
+# grepping src/<service>/ for ENABLE_TRACING / COLLECTOR_SERVICE_ADDR and
+# finding no match. These services can still resolve identity via
+# k8s.deployment.name (logs, events) but will never appear in Tempo.
+# quality-check.py must not flag "no trace found" as invalid for these.
+known_untraced_services:
+  - adservice
+  - cartservice
+  - shippingservice
+  - redis-cart

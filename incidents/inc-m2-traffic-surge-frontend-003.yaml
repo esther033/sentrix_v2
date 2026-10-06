@@ -1,0 +1,143 @@
+incident_id: inc-m2-traffic-surge-frontend-003
+experiment_id: exp-m2-traffic-surge-frontend-003
+run_id: m2-traffic-surge-frontend-003
+control_run_id: m2-control-traffic-surge-005
+baseline:
+  control_run_dir: C:\Users\Rehtse\SentriX\scripts\..\runs\m2-control-traffic-surge-005
+  target_rps: 2
+  n_transactions: 1801
+  success_rate_pct: 100.0
+  p50_ms: 316
+  p99_ms: 1866
+fault:
+  injected: true
+  type: traffic_surge
+  cause_family: workload
+  injection_layer: Workload / L7
+  scope_kind: entrypoint
+  scope_description: The k6 transaction arrival schedule increases from 2 rps to 5
+    rps only during the fault phase.
+  root_cause_service: frontend
+  target_pod_uid: null
+  chaos_mesh_object: null
+  started_at: '2026-09-26T03:34:49.966000+00:00'
+  ended_at: '2026-09-26T03:39:49.969000+00:00'
+  removal_confidence: confirmed
+  injector_status: succeeded
+workload:
+  profile: m2-traffic-surge-frontend-pilot
+  target_rps: 2
+  actual_rps: 2.773
+  dropped_iterations: 22
+impact:
+  confirmed: true
+  critical_failure: latency_increase
+  affected_endpoint: checkout
+  impact_started_at: '2026-09-26T03:36:07.369000+00:00'
+  evaluation_policy_version: v3
+recovery:
+  fault_removed_at: '2026-09-26T03:39:49.969000+00:00'
+  transaction_observation:
+    profile: m2-traffic-surge-frontend-pilot
+    first_passing_at: '2026-09-26T03:39:49.970Z'
+    stable_at: '2026-09-26T03:39:52.470Z'
+    observation_status: pass
+  evaluation_policy_version: v3
+status: recovered
+data_views:
+  raw: runs/m2-traffic-surge-frontend-003/raw-v2/
+  canonical: runs/m2-traffic-surge-frontend-003/canonical-v2-eb53bd51d680/
+  re2_compatible: runs/m2-traffic-surge-frontend-003/re2-v2-eb53bd51d680/
+data_generation: v2
+data_validation:
+  run:
+    complete: true
+    raw_export_complete: true
+    views:
+      raw: raw-v2
+      canonical: canonical-v2-eb53bd51d680
+      re2_compatible: re2-v2-eb53bd51d680
+  control:
+    complete: true
+    raw_export_complete: true
+    views:
+      raw: raw-v2
+      canonical: canonical-v2-326409d512e9
+      re2_compatible: re2-v2-326409d512e9
+validity:
+  injector_succeeded: true
+  removal_confirmed: true
+  telemetry_present_all_signals: true
+  actual_rate_meets_minimum: true
+  runtime_assessment:
+    valid: true
+    errors: []
+    actual_rps: 2.7728070175438595
+    elapsed_s: 1140.01
+    started_at: '2026-09-26T03:27:49.963Z'
+    ended_at: '2026-09-26T03:46:49.973Z'
+    fingerprint: 4c94de8f3644496499884b5d420f9a2e5c532f6ff6c472ad630f59d97063ae82
+    profile:
+      profile_name: m2-traffic-surge-frontend-pilot
+      description: 'M2 workload fault: entrypoint traffic rises from 2 rps to 5 rps
+        for five minutes, then returns to 2 rps.'
+      target_rps: 2
+      time_unit: 1s
+      duration: 19m
+      warmup_seconds: 120
+      baseline_seconds: 300
+      fault_seconds: 300
+      recovery_seconds: 300
+      cooldown_seconds: 120
+      traffic_phase_rps:
+        warmup: 2
+        baseline: 2
+        fault: 5
+        recovery: 2
+        cooldown: 2
+      control_phase_rps:
+        warmup: 2
+        baseline: 2
+        fault: 2
+        recovery: 2
+        cooldown: 2
+      pre_allocated_vus: 15
+      max_vus: 80
+      stage_timeout: 5s
+      trace_workers: 2
+      fault:
+        type: traffic_surge
+        root_cause_service: frontend
+        scope_kind: entrypoint
+        scope_description: The k6 transaction arrival schedule increases from 2 rps
+          to 5 rps only during the fault phase.
+    expected_transactions: 3180.0
+    phase_plan:
+    - !!python/tuple
+      - warmup
+      - 120
+      - 2.0
+    - !!python/tuple
+      - baseline
+      - 300
+      - 2.0
+    - !!python/tuple
+      - fault
+      - 300
+      - 5.0
+    - !!python/tuple
+      - recovery
+      - 300
+      - 2.0
+    - !!python/tuple
+      - cooldown
+      - 120
+      - 2.0
+  control_match:
+    valid: true
+    errors: []
+  dropped_iterations_under_threshold: true
+  raw_export_complete: true
+  data_views_complete: true
+  control_data_views_complete: true
+  is_valid_run: true

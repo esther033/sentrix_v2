@@ -1,0 +1,74 @@
+[
+  {
+    "path": "C:\\Users\\Rehtse\\SentriX\\runs\\.attended-lock",
+    "name": ".attended-lock",
+    "bytes": 1.0,
+    "reason": "obsolete M2 experiment, fast-check, or invalid run; superseded before clean control rerun"
+  },
+  {
+    "path": "C:\\Users\\Rehtse\\SentriX\\runs\\m2-control-policy-v2-001",
+    "name": "m2-control-policy-v2-001",
+    "bytes": 381973488.0,
+    "reason": "obsolete M2 experiment, fast-check, or invalid run; superseded before clean control rerun"
+  },
+  {
+    "path": "C:\\Users\\Rehtse\\SentriX\\runs\\m2-control-policy-v2-002",
+    "name": "m2-control-policy-v2-002",
+    "bytes": 84369186.0,
+    "reason": "obsolete M2 experiment, fast-check, or invalid run; superseded before clean control rerun"
+  },
+  {
+    "path": "C:\\Users\\Rehtse\\SentriX\\runs\\m2-control-policy-v3-001",
+    "name": "m2-control-policy-v3-001",
+    "bytes": 1708992180.0,
+    "reason": "obsolete M2 experiment, fast-check, or invalid run; superseded before clean control rerun"
+  },
+  {
+    "path": "C:\\Users\\Rehtse\\SentriX\\runs\\m2-control-policy-v3-002",
+    "name": "m2-control-policy-v3-002",
+    "bytes": 1693508250.0,
+    "reason": "obsolete M2 experiment, fast-check, or invalid run; superseded before clean control rerun"
+  },
+  {
+    "path": "C:\\Users\\Rehtse\\SentriX\\runs\\m2-cpu-checkoutservice-pilot-001-INVALID-partial-export",
+    "name": "m2-cpu-checkoutservice-pilot-001-INVALID-partial-export",
+    "bytes": 227607117.0,
+    "reason": "obsolete M2 experiment, fast-check, or invalid run; superseded before clean control rerun"
+  },
+  {
+    "path": "C:\\Users\\Rehtse\\SentriX\\runs\\m2-cpu-checkoutservice-pilot-002",
+    "name": "m2-cpu-checkoutservice-pilot-002",
+    "bytes": 454471762.0,
+    "reason": "obsolete M2 experiment, fast-check, or invalid run; superseded before clean control rerun"
+  },
+  {
+    "path": "C:\\Users\\Rehtse\\SentriX\\runs\\m2-cpu-checkoutservice-policy-v3-001",
+    "name": "m2-cpu-checkoutservice-policy-v3-001",
+    "bytes": 1820381782.0,
+    "reason": "obsolete M2 experiment, fast-check, or invalid run; superseded before clean control rerun"
+  },
+  {
+    "path": "C:\\Users\\Rehtse\\SentriX\\runs\\m2-fastcheck-control-001",
+    "name": "m2-fastcheck-control-001",
+    "bytes": 131619835.0,
+    "reason": "obsolete M2 experiment, fast-check, or invalid run; superseded before clean control rerun"
+  },
+  {
+    "path": "C:\\Users\\Rehtse\\SentriX\\runs\\m2-fastcheck-pilot-001",
+    "name": "m2-fastcheck-pilot-001",
+    "bytes": 113476106.0,
+    "reason": "obsolete M2 experiment, fast-check, or invalid run; superseded before clean control rerun"
+  },
+  {
+    "path": "C:\\Users\\Rehtse\\SentriX\\runs\\m2-live-control-20260922-001",
+    "name": "m2-live-control-20260922-001",
+    "bytes": 806226660.0,
+    "reason": "obsolete M2 experiment, fast-check, or invalid run; superseded before clean control rerun"
+  },
+  {
+    "path": "C:\\Users\\Rehtse\\SentriX\\runs\\m2-tempo-dryrun-001",
+    "name": "m2-tempo-dryrun-001",
+    "bytes": 438261124.0,
+    "reason": "obsolete M2 experiment, fast-check, or invalid run; superseded before clean control rerun"
+  }
+]

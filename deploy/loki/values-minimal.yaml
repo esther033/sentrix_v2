@@ -1,0 +1,66 @@
+# Grafana Loki, SingleBinary deployment mode with local filesystem storage
+# (no object storage / MinIO) -- Docker Desktop single-node pilot only.
+# Native OTLP ingest endpoint (/otlp/v1/logs) is used by both the
+# otel-collector gateway (Kubernetes Events) and daemonset (Pod stdout/stderr).
+deploymentMode: SingleBinary
+
+loki:
+  auth_enabled: false
+  useTestSchema: true
+  commonConfig:
+    replication_factor: 1
+  storage:
+    type: filesystem
+  limits_config:
+    retention_period: 24h
+    reject_old_samples: true
+    reject_old_samples_max_age: 168h
+  compactor:
+    retention_enabled: true
+    delete_request_store: filesystem
+
+singleBinary:
+  replicas: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 200Mi
+    limits:
+      cpu: 500m
+      memory: 500Mi
+  persistence:
+    # container runs with readOnlyRootFilesystem; /var/loki needs a writable
+    # volume even for a short-retention pilot, so persistence stays enabled
+    # with a small PVC on the cluster's default (local-path) StorageClass.
+    enabled: true
+    size: 2Gi
+
+gateway:
+  replicas: 1
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 128Mi
+
+# Disable components only relevant to SimpleScalable/Distributed modes.
+read:
+  replicas: 0
+write:
+  replicas: 0
+backend:
+  replicas: 0
+minio:
+  enabled: false
+
+# Disabled to fit the single Docker Desktop node's memory budget; only
+# affects query-path caching performance, not correctness, for this pilot.
+chunksCache:
+  enabled: false
+
+test:
+  enabled: false
+lokiCanary:
+  enabled: false

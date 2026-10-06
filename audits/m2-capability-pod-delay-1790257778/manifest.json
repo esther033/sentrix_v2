@@ -1,0 +1,26 @@
+{
+  "apiVersion": "chaos-mesh.org/v1alpha1",
+  "kind": "NetworkChaos",
+  "metadata": {
+    "name": "m2-capability-pod-delay-1790257778",
+    "namespace": "sentrix"
+  },
+  "spec": {
+    "action": "delay",
+    "mode": "one",
+    "selector": {
+      "namespaces": [
+        "sentrix"
+      ],
+      "labelSelectors": {
+        "app": "checkoutservice"
+      }
+    },
+    "duration": "20s",
+    "delay": {
+      "latency": "100ms",
+      "jitter": "10ms",
+      "correlation": "0"
+    }
+  }
+}

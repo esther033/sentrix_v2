@@ -1,0 +1,12 @@
+{
+  "profile_name": "pilot",
+  "description": "M1A/M1B pilot run: short telemetry-path smoke validation, not a baseline.",
+  "target_rps": 1,
+  "time_unit": "1s",
+  "duration": "9m",
+  "warmup_seconds": 120,
+  "cooldown_seconds": 120,
+  "pre_allocated_vus": 5,
+  "max_vus": 20,
+  "stage_timeout": "5s"
+}

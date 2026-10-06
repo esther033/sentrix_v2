@@ -1,0 +1,908 @@
+[
+  {
+    "second": "2026-09-24T06:02:51",
+    "iterations": 0,
+    "dropped_iterations": 0,
+    "http_reqs": 3
+  },
+  {
+    "second": "2026-09-24T06:02:52",
+    "iterations": 3,
+    "dropped_iterations": 0,
+    "http_reqs": 15
+  },
+  {
+    "second": "2026-09-24T06:02:53",
+    "iterations": 1,
+    "dropped_iterations": 0,
+    "http_reqs": 11
+  },
+  {
+    "second": "2026-09-24T06:02:54",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:02:55",
+    "iterations": 3,
+    "dropped_iterations": 0,
+    "http_reqs": 13
+  },
+  {
+    "second": "2026-09-24T06:02:56",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:02:57",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:02:58",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:02:59",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:00",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:01",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:02",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:03",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:04",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:05",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:06",
+    "iterations": 1,
+    "dropped_iterations": 0,
+    "http_reqs": 9
+  },
+  {
+    "second": "2026-09-24T06:03:07",
+    "iterations": 3,
+    "dropped_iterations": 0,
+    "http_reqs": 15
+  },
+  {
+    "second": "2026-09-24T06:03:08",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:09",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:10",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:11",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:12",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:13",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:14",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:15",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:16",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:17",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:18",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:19",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:20",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:21",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 17
+  },
+  {
+    "second": "2026-09-24T06:03:22",
+    "iterations": 3,
+    "dropped_iterations": 0,
+    "http_reqs": 13
+  },
+  {
+    "second": "2026-09-24T06:03:23",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:24",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:25",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:26",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:27",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:28",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:29",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:30",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:31",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:32",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:33",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:34",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:35",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:36",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:37",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:38",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:39",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:40",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:41",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:42",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:43",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:44",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:45",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:46",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:47",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:48",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:49",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:50",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:03:51",
+    "iterations": 3,
+    "dropped_iterations": 0,
+    "http_reqs": 18
+  },
+  {
+    "second": "2026-09-24T06:03:52",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 30
+  },
+  {
+    "second": "2026-09-24T06:03:53",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 30
+  },
+  {
+    "second": "2026-09-24T06:03:54",
+    "iterations": 3,
+    "dropped_iterations": 0,
+    "http_reqs": 27
+  },
+  {
+    "second": "2026-09-24T06:03:55",
+    "iterations": 7,
+    "dropped_iterations": 0,
+    "http_reqs": 33
+  },
+  {
+    "second": "2026-09-24T06:03:56",
+    "iterations": 4,
+    "dropped_iterations": 0,
+    "http_reqs": 28
+  },
+  {
+    "second": "2026-09-24T06:03:57",
+    "iterations": 6,
+    "dropped_iterations": 0,
+    "http_reqs": 32
+  },
+  {
+    "second": "2026-09-24T06:03:58",
+    "iterations": 4,
+    "dropped_iterations": 0,
+    "http_reqs": 29
+  },
+  {
+    "second": "2026-09-24T06:03:59",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 29
+  },
+  {
+    "second": "2026-09-24T06:04:00",
+    "iterations": 4,
+    "dropped_iterations": 0,
+    "http_reqs": 28
+  },
+  {
+    "second": "2026-09-24T06:04:01",
+    "iterations": 6,
+    "dropped_iterations": 0,
+    "http_reqs": 31
+  },
+  {
+    "second": "2026-09-24T06:04:02",
+    "iterations": 4,
+    "dropped_iterations": 0,
+    "http_reqs": 26
+  },
+  {
+    "second": "2026-09-24T06:04:03",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 32
+  },
+  {
+    "second": "2026-09-24T06:04:04",
+    "iterations": 6,
+    "dropped_iterations": 0,
+    "http_reqs": 32
+  },
+  {
+    "second": "2026-09-24T06:04:05",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 31
+  },
+  {
+    "second": "2026-09-24T06:04:06",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 29
+  },
+  {
+    "second": "2026-09-24T06:04:07",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 31
+  },
+  {
+    "second": "2026-09-24T06:04:08",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 31
+  },
+  {
+    "second": "2026-09-24T06:04:09",
+    "iterations": 4,
+    "dropped_iterations": 0,
+    "http_reqs": 25
+  },
+  {
+    "second": "2026-09-24T06:04:10",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 29
+  },
+  {
+    "second": "2026-09-24T06:04:11",
+    "iterations": 6,
+    "dropped_iterations": 0,
+    "http_reqs": 35
+  },
+  {
+    "second": "2026-09-24T06:04:12",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 30
+  },
+  {
+    "second": "2026-09-24T06:04:13",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 31
+  },
+  {
+    "second": "2026-09-24T06:04:14",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 29
+  },
+  {
+    "second": "2026-09-24T06:04:15",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 30
+  },
+  {
+    "second": "2026-09-24T06:04:16",
+    "iterations": 6,
+    "dropped_iterations": 0,
+    "http_reqs": 32
+  },
+  {
+    "second": "2026-09-24T06:04:17",
+    "iterations": 4,
+    "dropped_iterations": 0,
+    "http_reqs": 29
+  },
+  {
+    "second": "2026-09-24T06:04:18",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 29
+  },
+  {
+    "second": "2026-09-24T06:04:19",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 30
+  },
+  {
+    "second": "2026-09-24T06:04:20",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 30
+  },
+  {
+    "second": "2026-09-24T06:04:21",
+    "iterations": 5,
+    "dropped_iterations": 0,
+    "http_reqs": 28
+  },
+  {
+    "second": "2026-09-24T06:04:22",
+    "iterations": 4,
+    "dropped_iterations": 0,
+    "http_reqs": 22
+  },
+  {
+    "second": "2026-09-24T06:04:23",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:24",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:25",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:26",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:27",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:28",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:29",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:30",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:31",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:32",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:33",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:34",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:35",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:36",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:37",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:38",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:39",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:40",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:41",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:42",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:43",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:44",
+    "iterations": 1,
+    "dropped_iterations": 0,
+    "http_reqs": 11
+  },
+  {
+    "second": "2026-09-24T06:04:45",
+    "iterations": 3,
+    "dropped_iterations": 0,
+    "http_reqs": 13
+  },
+  {
+    "second": "2026-09-24T06:04:46",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:47",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:48",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:49",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:50",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:51",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 17
+  },
+  {
+    "second": "2026-09-24T06:04:52",
+    "iterations": 3,
+    "dropped_iterations": 0,
+    "http_reqs": 13
+  },
+  {
+    "second": "2026-09-24T06:04:53",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:54",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:55",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:56",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:57",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:58",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:04:59",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:00",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:01",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:02",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:03",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:04",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:05",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:06",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:07",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:08",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:09",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:10",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:11",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:12",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:13",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:14",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:15",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:16",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:17",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:18",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:19",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:20",
+    "iterations": 2,
+    "dropped_iterations": 0,
+    "http_reqs": 12
+  },
+  {
+    "second": "2026-09-24T06:05:21",
+    "iterations": 1,
+    "dropped_iterations": 0,
+    "http_reqs": 6
+  }
+]

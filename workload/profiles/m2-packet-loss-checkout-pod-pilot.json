@@ -1,0 +1,32 @@
+{
+  "profile_name": "m2-packet-loss-checkout-pod-pilot",
+  "description": "Pod-wide checkoutservice egress impairment; includes telemetry/probe traffic, not an edge experiment.",
+  "target_rps": 2,
+  "time_unit": "1s",
+  "duration": "19m",
+  "warmup_seconds": 120,
+  "baseline_seconds": 300,
+  "fault_seconds": 300,
+  "recovery_seconds": 300,
+  "cooldown_seconds": 120,
+  "traffic_phase_rps": {
+    "warmup": 2,
+    "baseline": 2,
+    "fault": 2,
+    "recovery": 2,
+    "cooldown": 2
+  },
+  "pre_allocated_vus": 15,
+  "max_vus": 80,
+  "stage_timeout": "5s",
+  "fault": {
+    "type": "packet_loss",
+    "root_cause_service": "checkoutservice",
+    "scope_kind": "service_instance",
+    "scope_description": "All outgoing packets of one checkoutservice pod, including telemetry and health-probe responses.",
+    "template": "deploy/chaos-mesh/faults/packet-loss-pod.yaml",
+    "params": {
+      "LOSS_PERCENT": "5"
+    }
+  }
+}

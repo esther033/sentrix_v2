@@ -1,0 +1,111 @@
+# Raises CPU limits for the 7 services that now export OTLP traces (see
+# otlp-env-patch.yaml). The original manifest's 200m CPU limit was sized
+# for these services WITHOUT tracing overhead. Discovered during the M1A
+# pilot run: currencyservice's gRPC health probe (readiness AND liveness,
+# both grpc-based, 1s timeout) started timing out ("context deadline
+# exceeded") and the pod crash-looped 6 times in 15 minutes, at only ~1
+# transaction/second of load -- CPU limit exhaustion causing the
+# single-threaded Node.js event loop to stall long enough to miss its own
+# health check, not an application bug. This produced ~45-50% transaction
+# failure (HTTP 500, "connection refused") in a workload that should have
+# had ~0% failure, which is why the pilot's raw success rate is NOT a
+# usable M1B baseline as-is.
+#
+# Paymentservice additionally needs 512Mi memory: the v2 control on
+# 2026-09-22 observed exit 137 / OOMKilled at its original 128Mi limit.
+# Other memory limits remain unchanged.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkoutservice
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          resources:
+            limits:
+              cpu: 500m
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: currencyservice
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          resources:
+            limits:
+              cpu: 500m
+              # Control m2-control-policy-v3-002 recorded OOMKilled (137)
+              # at the prior 128Mi limit immediately after startup.
+              # Keep this aligned with paymentservice's proven headroom.
+              memory: 512Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emailservice
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          resources:
+            limits:
+              cpu: 500m
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          resources:
+            limits:
+              cpu: 500m
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paymentservice
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productcatalogservice
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          resources:
+            limits:
+              cpu: 500m
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recommendationservice
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          resources:
+            limits:
+              cpu: 500m

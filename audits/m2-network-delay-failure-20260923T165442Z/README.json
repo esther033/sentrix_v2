@@ -1,0 +1,5 @@
+{
+  "reason": "NetworkChaos source injection failed: ipset kernel set type unsupported; no workload dataset was produced",
+  "run_id": "m2-network-delay-frontend-checkout-001",
+  "chaos_object": "m2-network-delay-frontend-checkout-001-fault"
+}

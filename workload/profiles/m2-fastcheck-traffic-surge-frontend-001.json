@@ -1,0 +1,36 @@
+{
+  "profile_name": "m2-fastcheck-traffic-surge-frontend-001",
+  "description": "Four-minute non-dataset traffic-surge check for bounded parallel trace export and workload evidence.",
+  "target_rps": 2,
+  "time_unit": "1s",
+  "duration": "4m",
+  "warmup_seconds": 30,
+  "baseline_seconds": 60,
+  "fault_seconds": 60,
+  "recovery_seconds": 60,
+  "cooldown_seconds": 30,
+  "traffic_phase_rps": {
+    "warmup": 2,
+    "baseline": 2,
+    "fault": 5,
+    "recovery": 2,
+    "cooldown": 2
+  },
+  "control_phase_rps": {
+    "warmup": 2,
+    "baseline": 2,
+    "fault": 2,
+    "recovery": 2,
+    "cooldown": 2
+  },
+  "pre_allocated_vus": 15,
+  "max_vus": 80,
+  "stage_timeout": "5s",
+  "trace_workers": 2,
+  "fault": {
+    "type": "traffic_surge",
+    "root_cause_service": "frontend",
+    "scope_kind": "entrypoint",
+    "scope_description": "The k6 transaction arrival schedule increases from 2 rps to 5 rps only during the fault phase."
+  }
+}

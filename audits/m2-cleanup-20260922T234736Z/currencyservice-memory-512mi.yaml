@@ -1,0 +1,9 @@
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi

@@ -1,0 +1,101 @@
+# OTel Collector "gateway" (mode: deployment, single replica).
+# Receives OTLP traces/metrics directly from Online Boutique application
+# pods (see deploy/online-boutique/otlp-env-patch.yaml for COLLECTOR_SERVICE_ADDR),
+# derives RED metrics from traces via the spanmetrics connector (Online
+# Boutique does not emit its own request-rate/latency/error metrics), and
+# collects Kubernetes Events via the k8sobjects receiver.
+#
+# Pipelines:
+#   traces  : otlp receiver -> k8sattributes -> [otlp/tempo exporter, spanmetrics connector]
+#   metrics : otlp + spanmetrics connector -> prometheus exporter (scraped by cluster Prometheus)
+#   logs    : k8sobjects receiver (Kubernetes Events ONLY, injected by the
+#             kubernetesEvents preset) -> otlphttp/loki exporter
+#             Pod stdout/stderr logs do NOT flow through this pipeline --
+#             see daemonset-values.yaml for the filelog path.
+mode: deployment
+image:
+  repository: otel/opentelemetry-collector-contrib
+command:
+  name: otelcol-contrib
+
+replicaCount: 1
+
+# Scraped by the cluster Prometheus (default kubernetes-pods job, which
+# discovers pods carrying these annotations) -- see deploy/prometheus/values-minimal.yaml.
+podAnnotations:
+  prometheus.io/scrape: "true"
+  prometheus.io/port: "8889"
+  prometheus.io/path: "/metrics"
+
+presets:
+  kubernetesAttributes:
+    enabled: true
+  kubernetesEvents:
+    enabled: true
+
+ports:
+  jaeger-compact:
+    enabled: false
+  jaeger-thrift:
+    enabled: false
+  jaeger-grpc:
+    enabled: false
+  zipkin:
+    enabled: false
+  prom-exporter:
+    enabled: true
+    containerPort: 8889
+    servicePort: 8889
+    protocol: TCP
+
+config:
+  connectors:
+    spanmetrics:
+      histogram:
+        explicit:
+          buckets: [10ms, 25ms, 50ms, 100ms, 250ms, 500ms, 1s, 2.5s, 5s, 10s]
+      dimensions:
+        - name: http.method
+          default: "unknown"
+        - name: http.status_code
+          default: "unknown"
+      metrics_flush_interval: 15s
+
+  exporters:
+    debug:
+      verbosity: basic
+    otlp/tempo:
+      endpoint: tempo.sentrix.svc.cluster.local:4317
+      tls:
+        insecure: true
+    prometheus:
+      endpoint: ${env:MY_POD_IP}:8889
+      resource_to_telemetry_conversion:
+        enabled: true
+    otlphttp/loki:
+      endpoint: http://loki-gateway.sentrix.svc.cluster.local/otlp
+      tls:
+        insecure: true
+
+  service:
+    pipelines:
+      traces:
+        receivers: [otlp]
+        processors: [memory_limiter, batch]
+        exporters: [otlp/tempo, spanmetrics, debug]
+      metrics:
+        receivers: [otlp, spanmetrics]
+        processors: [memory_limiter, batch]
+        exporters: [prometheus]
+      logs:
+        receivers: []
+        processors: [memory_limiter, batch]
+        exporters: [otlphttp/loki, debug]
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 150Mi
+  limits:
+    cpu: 500m
+    memory: 300Mi

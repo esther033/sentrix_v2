@@ -1,0 +1,249 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "chaos-mesh.org/v1alpha1",
+            "kind": "StressChaos",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"chaos-mesh.org/v1alpha1\",\"kind\":\"StressChaos\",\"metadata\":{\"annotations\":{},\"name\":\"m2-cpu-checkoutservice-pilot-001-cpu-saturation\",\"namespace\":\"sentrix\"},\"spec\":{\"duration\":\"300s\",\"mode\":\"one\",\"selector\":{\"labelSelectors\":{\"app\":\"checkoutservice\"},\"namespaces\":[\"sentrix\"]},\"stressors\":{\"cpu\":{\"load\":100,\"workers\":1}}}}\n"
+                },
+                "creationTimestamp": "2026-09-19T08:23:14Z",
+                "finalizers": [
+                    "chaos-mesh/records"
+                ],
+                "generation": 8,
+                "name": "m2-cpu-checkoutservice-pilot-001-cpu-saturation",
+                "namespace": "sentrix",
+                "resourceVersion": "79950",
+                "uid": "480b0744-3319-40ab-ac70-bd509004e590"
+            },
+            "spec": {
+                "duration": "300s",
+                "mode": "one",
+                "selector": {
+                    "labelSelectors": {
+                        "app": "checkoutservice"
+                    },
+                    "namespaces": [
+                        "sentrix"
+                    ]
+                },
+                "stressors": {
+                    "cpu": {
+                        "load": 100,
+                        "workers": 1
+                    }
+                }
+            },
+            "status": {
+                "conditions": [
+                    {
+                        "status": "True",
+                        "type": "Selected"
+                    },
+                    {
+                        "status": "False",
+                        "type": "AllInjected"
+                    },
+                    {
+                        "status": "True",
+                        "type": "AllRecovered"
+                    },
+                    {
+                        "status": "False",
+                        "type": "Paused"
+                    }
+                ],
+                "experiment": {
+                    "containerRecords": [
+                        {
+                            "events": [
+                                {
+                                    "operation": "Apply",
+                                    "timestamp": "2026-09-19T08:23:15Z",
+                                    "type": "Succeeded"
+                                },
+                                {
+                                    "operation": "Recover",
+                                    "timestamp": "2026-09-19T08:28:14Z",
+                                    "type": "Succeeded"
+                                }
+                            ],
+                            "id": "sentrix/checkoutservice-74dd7db7cb-zv46k/server",
+                            "injectedCount": 1,
+                            "phase": "Not Injected",
+                            "recoveredCount": 1,
+                            "selectorKey": "."
+                        }
+                    ],
+                    "desiredPhase": "Stop"
+                }
+            }
+        },
+        {
+            "apiVersion": "chaos-mesh.org/v1alpha1",
+            "kind": "StressChaos",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"chaos-mesh.org/v1alpha1\",\"kind\":\"StressChaos\",\"metadata\":{\"annotations\":{},\"name\":\"m2-cpu-checkoutservice-pilot-002-cpu-saturation\",\"namespace\":\"sentrix\"},\"spec\":{\"duration\":\"300s\",\"mode\":\"one\",\"selector\":{\"labelSelectors\":{\"app\":\"checkoutservice\"},\"namespaces\":[\"sentrix\"]},\"stressors\":{\"cpu\":{\"load\":100,\"workers\":1}}}}\n"
+                },
+                "creationTimestamp": "2026-09-20T05:59:29Z",
+                "finalizers": [
+                    "chaos-mesh/records"
+                ],
+                "generation": 8,
+                "name": "m2-cpu-checkoutservice-pilot-002-cpu-saturation",
+                "namespace": "sentrix",
+                "resourceVersion": "131084",
+                "uid": "3c90b7b9-9ca6-48f7-a63b-437d46817581"
+            },
+            "spec": {
+                "duration": "300s",
+                "mode": "one",
+                "selector": {
+                    "labelSelectors": {
+                        "app": "checkoutservice"
+                    },
+                    "namespaces": [
+                        "sentrix"
+                    ]
+                },
+                "stressors": {
+                    "cpu": {
+                        "load": 100,
+                        "workers": 1
+                    }
+                }
+            },
+            "status": {
+                "conditions": [
+                    {
+                        "status": "True",
+                        "type": "AllRecovered"
+                    },
+                    {
+                        "status": "False",
+                        "type": "Paused"
+                    },
+                    {
+                        "status": "True",
+                        "type": "Selected"
+                    },
+                    {
+                        "status": "False",
+                        "type": "AllInjected"
+                    }
+                ],
+                "experiment": {
+                    "containerRecords": [
+                        {
+                            "events": [
+                                {
+                                    "operation": "Apply",
+                                    "timestamp": "2026-09-20T05:59:31Z",
+                                    "type": "Succeeded"
+                                },
+                                {
+                                    "operation": "Recover",
+                                    "timestamp": "2026-09-20T06:04:29Z",
+                                    "type": "Succeeded"
+                                }
+                            ],
+                            "id": "sentrix/checkoutservice-74dd7db7cb-zv46k/server",
+                            "injectedCount": 1,
+                            "phase": "Not Injected",
+                            "recoveredCount": 1,
+                            "selectorKey": "."
+                        }
+                    ],
+                    "desiredPhase": "Stop"
+                }
+            }
+        },
+        {
+            "apiVersion": "chaos-mesh.org/v1alpha1",
+            "kind": "StressChaos",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"chaos-mesh.org/v1alpha1\",\"kind\":\"StressChaos\",\"metadata\":{\"annotations\":{},\"name\":\"m2-fastcheck-pilot-001-cpu-saturation\",\"namespace\":\"sentrix\"},\"spec\":{\"duration\":\"60s\",\"mode\":\"one\",\"selector\":{\"labelSelectors\":{\"app\":\"checkoutservice\"},\"namespaces\":[\"sentrix\"]},\"stressors\":{\"cpu\":{\"load\":100,\"workers\":1}}}}\n"
+                },
+                "creationTimestamp": "2026-09-21T07:26:26Z",
+                "finalizers": [
+                    "chaos-mesh/records"
+                ],
+                "generation": 8,
+                "name": "m2-fastcheck-pilot-001-cpu-saturation",
+                "namespace": "sentrix",
+                "resourceVersion": "237321",
+                "uid": "514d697f-ff60-4163-88d2-01a0445dd2eb"
+            },
+            "spec": {
+                "duration": "60s",
+                "mode": "one",
+                "selector": {
+                    "labelSelectors": {
+                        "app": "checkoutservice"
+                    },
+                    "namespaces": [
+                        "sentrix"
+                    ]
+                },
+                "stressors": {
+                    "cpu": {
+                        "load": 100,
+                        "workers": 1
+                    }
+                }
+            },
+            "status": {
+                "conditions": [
+                    {
+                        "status": "False",
+                        "type": "Paused"
+                    },
+                    {
+                        "status": "True",
+                        "type": "Selected"
+                    },
+                    {
+                        "status": "False",
+                        "type": "AllInjected"
+                    },
+                    {
+                        "status": "True",
+                        "type": "AllRecovered"
+                    }
+                ],
+                "experiment": {
+                    "containerRecords": [
+                        {
+                            "events": [
+                                {
+                                    "operation": "Apply",
+                                    "timestamp": "2026-09-21T07:26:30Z",
+                                    "type": "Succeeded"
+                                },
+                                {
+                                    "operation": "Recover",
+                                    "timestamp": "2026-09-21T07:27:26Z",
+                                    "type": "Succeeded"
+                                }
+                            ],
+                            "id": "sentrix/checkoutservice-74dd7db7cb-zv46k/server",
+                            "injectedCount": 1,
+                            "phase": "Not Injected",
+                            "recoveredCount": 1,
+                            "selectorKey": "."
+                        }
+                    ],
+                    "desiredPhase": "Stop"
+                }
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "profile_name": "m2-control-policy-v3",
+  "description": "Matched no-fault 19-minute control for evaluation policy v3 after paymentservice memory fix.",
+  "target_rps": 2,
+  "time_unit": "1s",
+  "duration": "19m",
+  "warmup_seconds": 120,
+  "baseline_seconds": 300,
+  "fault_seconds": 300,
+  "recovery_seconds": 300,
+  "cooldown_seconds": 120,
+  "pre_allocated_vus": 10,
+  "max_vus": 50,
+  "stage_timeout": "5s"
+}

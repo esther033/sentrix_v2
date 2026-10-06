@@ -1,0 +1,20 @@
+{
+  "run_id": "m2-control-traffic-surge-003",
+  "started_at": "2026-09-24T06:05:55.935089+00:00",
+  "errors": [],
+  "steps": {
+    "scripts/generate-run-manifest.py": 0,
+    "smoke/quality-check.py": 0,
+    "scripts/process-telemetry.py": 0
+  },
+  "recorder_pid": 1032,
+  "elapsed_s": 1142.3,
+  "heartbeat_at": "2026-09-24T06:34:04.429726+00:00",
+  "workload_rc": 0,
+  "workload_elapsed_s": 1144.297000000006,
+  "phase": "finished",
+  "stage_pid": null,
+  "finished_at": "2026-09-24T06:34:10.836176+00:00",
+  "assessment_valid": true,
+  "complete": true
+}

@@ -1,0 +1,26 @@
+{
+  "profile_name": "m2-network-delay-frontend-checkout-pilot",
+  "description": "M2 network-delay pilot: delay frontend-to-checkoutservice dependency traffic under the matched 2 rps workload.",
+  "target_rps": 2,
+  "time_unit": "1s",
+  "duration": "19m",
+  "warmup_seconds": 120,
+  "baseline_seconds": 300,
+  "fault_seconds": 300,
+  "recovery_seconds": 300,
+  "cooldown_seconds": 120,
+  "pre_allocated_vus": 10,
+  "max_vus": 50,
+  "stage_timeout": "5s",
+  "fault": {
+    "type": "network_delay",
+    "template": "deploy/chaos-mesh/faults/network-delay.yaml",
+    "root_cause_service": "checkoutservice",
+    "params": {
+      "SOURCE_SERVICE": "frontend",
+      "TARGET_SERVICE": "checkoutservice",
+      "LATENCY": "2000ms",
+      "JITTER": "200ms"
+    }
+  }
+}

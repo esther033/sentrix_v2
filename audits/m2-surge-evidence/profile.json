@@ -1,0 +1,33 @@
+{
+  "profile_name": "m2-surge-evidence-smoke",
+  "description": "M2 workload fault: entrypoint traffic rises from 2 rps to 5 rps for five minutes, then returns to 2 rps.",
+  "target_rps": 2,
+  "time_unit": "1s",
+  "duration": "150s",
+  "warmup_seconds": 30,
+  "baseline_seconds": 30,
+  "fault_seconds": 30,
+  "recovery_seconds": 30,
+  "cooldown_seconds": 30,
+  "traffic_phase_rps": {
+    "warmup": 2,
+    "baseline": 2,
+    "fault": 5,
+    "recovery": 2,
+    "cooldown": 2
+  },
+  "control_phase_rps": {
+    "warmup": 2,
+    "baseline": 2,
+    "fault": 2,
+    "recovery": 2,
+    "cooldown": 2
+  },
+  "pre_allocated_vus": 15,
+  "max_vus": 80,
+  "stage_timeout": "5s",
+  "fault": {
+    "type": "traffic_surge",
+    "root_cause_service": "frontend"
+  }
+}

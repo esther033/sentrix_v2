@@ -1,0 +1,11 @@
+{
+  "fault_kind": "networkchaos",
+  "fault_name": "m2-network-delay-frontend-checkout-001-fault",
+  "type": "network_delay",
+  "root_cause_service": "checkoutservice",
+  "started_at": null,
+  "ended_at": null,
+  "removal_confidence": "unknown",
+  "injector_status": "unknown",
+  "target_pod_uid": null
+}

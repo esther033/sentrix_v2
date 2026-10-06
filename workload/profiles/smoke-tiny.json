@@ -1,0 +1,12 @@
+{
+  "profile_name": "smoke-tiny",
+  "description": "Internal dev-only micro run (single transaction) used to validate the k6 script and recorder wiring before running the real pilot profile. Not part of the M1A/M1B protocol.",
+  "target_rps": 0.2,
+  "time_unit": "1s",
+  "duration": "10s",
+  "warmup_seconds": 0,
+  "cooldown_seconds": 0,
+  "pre_allocated_vus": 2,
+  "max_vus": 2,
+  "stage_timeout": "5s"
+}

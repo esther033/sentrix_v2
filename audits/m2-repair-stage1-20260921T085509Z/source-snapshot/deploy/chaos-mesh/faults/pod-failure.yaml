@@ -1,0 +1,21 @@
+# PodChaos pod-failure template -- service_instance scope. pod-failure
+# (not pod-kill): the pod's containers are replaced with a pause
+# container for `duration`, i.e. the pod stays "present" but cannot
+# serve traffic -- a bounded unavailability window with a clean,
+# verifiable end, matching sentrix-project-context.md section 8's
+# "one-shot failure or bounded unavailability" characterization.
+# {{NAME}}, {{TARGET_SERVICE}}, {{DURATION}}
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: "{{NAME}}"
+  namespace: sentrix
+spec:
+  action: pod-failure
+  mode: one
+  selector:
+    namespaces:
+      - sentrix
+    labelSelectors:
+      app: "{{TARGET_SERVICE}}"
+  duration: "{{DURATION}}"

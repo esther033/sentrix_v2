@@ -1,0 +1,25 @@
+# StressChaos template for the cpu_saturation fault type. Placeholders
+# ({{NAME}}, {{TARGET_SERVICE}}, {{DURATION}}) are substituted by
+# scripts/run-fault-experiment.py, not hand-edited per run.
+#
+# workers=1, load=100: one stress-ng worker at 100% load. Against
+# checkoutservice's 500m CPU limit (deploy/online-boutique/resource-patch.yaml),
+# this consistently drives the container to its cgroup CPU throttle
+# ceiling -- a real, sustained saturation condition, not a brief spike.
+apiVersion: chaos-mesh.org/v1alpha1
+kind: StressChaos
+metadata:
+  name: "{{NAME}}"
+  namespace: sentrix
+spec:
+  mode: one
+  selector:
+    namespaces:
+      - sentrix
+    labelSelectors:
+      app: "{{TARGET_SERVICE}}"
+  stressors:
+    cpu:
+      workers: 1
+      load: 100
+  duration: "{{DURATION}}"

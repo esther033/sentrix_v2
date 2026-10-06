@@ -1,0 +1,12 @@
+{
+  "profile_name": "high-normal",
+  "description": "M1B no-fault control run, high-but-still-normal traffic (used later to teach detectors that high load alone is not an incident). Only run after the pilot profile has passed the M1A gate.",
+  "target_rps": 5,
+  "time_unit": "1s",
+  "duration": "30m",
+  "warmup_seconds": 600,
+  "cooldown_seconds": 300,
+  "pre_allocated_vus": 20,
+  "max_vus": 100,
+  "stage_timeout": "5s"
+}

@@ -1,0 +1,19 @@
+{
+  "run_id": "m2-network-delay-frontend-checkout-001",
+  "started_at": "2026-09-23T07:38:17.151779+00:00",
+  "errors": [
+    "Injection not confirmed"
+  ],
+  "steps": {
+    "scripts/generate-run-manifest.py": 0,
+    "smoke/quality-check.py": 1,
+    "scripts/process-telemetry.py": 1,
+    "scripts/generate-incident-record.py": 1
+  },
+  "recorder_pid": 12416,
+  "elapsed_s": 479.86,
+  "heartbeat_at": "2026-09-23T07:46:17.236686+00:00",
+  "fault_apply_elapsed": 421.3119999999999,
+  "finished_at": "2026-09-23T07:47:53.126645+00:00",
+  "assessment_valid": false
+}

@@ -1,0 +1,74 @@
+# Incident registry record schema, per sentrix-project-context.md section 6.
+# One file per incident: incidents/<incident_id>.yaml. This file is the
+# annotated SCHEMA/example, not itself a real incident -- generated
+# records live alongside it as incidents/inc-*.yaml, produced by
+# scripts/generate-incident-record.py.
+#
+# incident_id vs experiment_id vs run_id:
+#   run_id       -- one k6/transaction-recorder execution (ties to
+#                    runs/<run_id>/)
+#   experiment_id -- one (fault_type, target_service) pairing, may cover
+#                    multiple repetitions/runs
+#   incident_id  -- one specific fault occurrence within an experiment
+#                    (== one run_id's fault window, in this project's
+#                    usage: one run, one incident)
+
+incident_id: inc-example-001
+experiment_id: exp-cpu-checkoutservice-pilot
+run_id: m2-cpu-checkoutservice-pilot-001
+
+fault:
+  injected: true
+  type: cpu_saturation           # cpu_saturation | network_delay | packet_loss | pod_failure | traffic_surge
+  cause_family: resource         # resource | network | availability | workload (section 8 taxonomy)
+  injection_layer: platform_compute  # section 7 layer model
+  scope_kind: service_instance   # service_instance | dependency_edge | entrypoint
+  root_cause_service: checkoutservice
+  target_pod_uid: "<from kubectl get pod -o jsonpath='{.metadata.uid}'>"
+  chaos_mesh_object: "stresschaos/checkoutservice-cpu-pilot"
+  started_at: null               # ISO8601 UTC -- when the Chaos Mesh object's .status shows Injected
+  ended_at: null                 # ISO8601 UTC -- when .status shows the fault no longer active (verified, not scheduled-duration-assumed)
+  injector_status: null          # succeeded | failed | unknown
+
+workload:
+  profile: main
+  target_rps: 2
+  actual_rps: null               # from workload-timeseries.json
+  dropped_iterations: null
+
+impact:
+  confirmed: null                 # bool, per incidents/evaluation-policy-v1.md criteria
+  critical_failure: null          # latency_increase | error_rate_increase | null
+  affected_endpoint: checkout
+  impact_started_at: null
+  evaluation_policy_version: v1
+
+recovery:
+  fault_removed_at: null          # Chaos Mesh-reported, independent of transaction observation
+  transaction_observation:
+    profile: main
+    first_passing_at: null
+    stable_at: null               # per evaluation-policy-v1.md's 10-transaction + 2min-clean rule
+    observation_status: unknown   # pass | fail | unknown
+  evaluation_policy_version: v1
+
+# section 6 status labels, computed at generation time from the above:
+# normal | fault_active_no_impact | abnormal_impacted | recovery | recovered
+status: unknown
+
+data_views:
+  raw: "runs/m2-cpu-checkoutservice-pilot-001/raw/"
+  canonical: "runs/m2-cpu-checkoutservice-pilot-001/canonical/"
+  re2_compatible: "runs/m2-cpu-checkoutservice-pilot-001/re2-compatible/"
+
+validity:
+  # section 9 validity criteria, checked by scripts/generate-incident-record.py
+  injector_succeeded: null
+  telemetry_present_all_signals: null
+  actual_rate_meets_minimum: null
+  dropped_iterations_under_threshold: null
+  time_sync_ok: null
+  identity_resolution_ok: null
+  overlaps_other_experiment: null
+  environment_anomaly: null       # non-null value/string if sleep/port-forward/observability outage detected during this run -- see docs/MILESTONE1.md known limitations
+  is_valid_run: null

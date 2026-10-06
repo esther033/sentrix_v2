@@ -1,0 +1,31 @@
+{
+  "run_id": "m2-live-control-20260922-001",
+  "generation": "cpu60-v3",
+  "pipeline_complete": true,
+  "transactions": 481,
+  "failed": 0,
+  "timeouts": 0,
+  "dropped_iterations": 0,
+  "p50_ms": 295,
+  "p99_ms": 2677,
+  "raw_metric_points": 44214,
+  "canonical_metric_rows": 44214,
+  "aggregation_comparisons": 2268,
+  "aggregation_mismatches": [],
+  "traces_exported": 2215,
+  "known_transaction_traces": 481,
+  "known_trace_ids_missing": [],
+  "raw_log_lines": 35395,
+  "views": {
+    "raw": "raw-cpu60-v3",
+    "canonical": "canonical-cpu60-v3-05bb26e4129e",
+    "re2_compatible": "re2-cpu60-v3-05bb26e4129e"
+  },
+  "limitations": [
+    "4-minute smoke control, not formal baseline",
+    "CPU uses 60-second rate; span latency/error use 30-second windows",
+    "One trace restored from original same-run checkpoint with provenance",
+    "Workload window events=0; later sentinel raw response saved in audit",
+    "No CPU fault injected; recovery validation pending"
+  ]
+}

@@ -1,0 +1,57 @@
+# OTel Collector "daemonset" (mode: daemonset, 1 pod on this single-node
+# cluster). Sole job: tail Pod stdout/stderr via the filelog receiver (CRI
+# log format) and forward to Loki. Does NOT receive OTLP traffic -- that is
+# the gateway's job (see gateway-values.yaml). OTLP/jaeger/zipkin ports are
+# disabled here to avoid hostPort collisions with the gateway pod, since
+# both run on the same single node.
+mode: daemonset
+image:
+  repository: otel/opentelemetry-collector-contrib
+command:
+  name: otelcol-contrib
+
+presets:
+  logsCollection:
+    enabled: true
+    includeCollectorLogs: false
+  kubernetesAttributes:
+    enabled: true
+
+ports:
+  otlp:
+    enabled: false
+  otlp-http:
+    enabled: false
+  jaeger-compact:
+    enabled: false
+  jaeger-thrift:
+    enabled: false
+  jaeger-grpc:
+    enabled: false
+  zipkin:
+    enabled: false
+
+config:
+  exporters:
+    debug:
+      verbosity: basic
+    otlphttp/loki:
+      endpoint: http://loki-gateway.sentrix.svc.cluster.local/otlp
+      tls:
+        insecure: true
+  service:
+    pipelines:
+      traces: null
+      metrics: null
+      logs:
+        receivers: []
+        processors: [memory_limiter, batch]
+        exporters: [otlphttp/loki, debug]
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 100Mi
+  limits:
+    cpu: 300m
+    memory: 200Mi

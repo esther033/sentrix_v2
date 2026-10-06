@@ -1,0 +1,15 @@
+{
+  "profile_name": "m2-live-control-smoke-v2",
+  "description": "No-fault 4-minute integration validation at 2 rps; not a formal M2 baseline.",
+  "target_rps": 2,
+  "time_unit": "1s",
+  "duration": "4m",
+  "warmup_seconds": 30,
+  "baseline_seconds": 60,
+  "fault_seconds": 60,
+  "recovery_seconds": 60,
+  "cooldown_seconds": 30,
+  "pre_allocated_vus": 10,
+  "max_vus": 50,
+  "stage_timeout": "5s"
+}

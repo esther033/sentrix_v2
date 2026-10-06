@@ -1,0 +1,20 @@
+# Machine-local helper (contains an absolute local path to helm.exe)
+scripts/helm-path.sh
+
+# Scratch/dev-only runs (prefixed smoke-dev- or similar); real M1A/M1B runs
+# under runs/<run_id>/ ARE tracked -- raw export is the reproducibility
+# artifact.
+runs/smoke-dev-*/
+
+# Generated experiment artifacts are large (the local corpus is tens of GiB)
+# and exceed GitHub's repository/file limits. Keep only the data inventory and
+# incident metadata in Git; retain raw/canonical/RE2 artifacts outside Git.
+runs/*
+!runs/README.md
+
+# Downloaded RE2-OB sample used to validate docs/RE2_SCHEMA.md -- public
+# dataset, not SentriX's own data, re-downloadable, not committed.
+.re2-sample/
+
+__pycache__/
+*.pyc

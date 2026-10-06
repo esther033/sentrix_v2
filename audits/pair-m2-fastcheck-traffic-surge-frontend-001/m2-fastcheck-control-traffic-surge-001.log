@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "C:\Users\Rehtse\SentriX\scripts\run-attended.py", line 247, in <module>
+    raise SystemExit(run(args))
+                     ^^^^^^^^^
+  File "C:\Users\Rehtse\SentriX\scripts\run-attended.py", line 90, in run
+    no_active_chaos()
+  File "C:\Users\Rehtse\SentriX\scripts\run-attended.py", line 55, in no_active_chaos
+    raise RuntimeError("Unrecovered Chaos object: "+item['metadata']['name'])
+RuntimeError: Unrecovered Chaos object: m2-capability-pod-delay-1790257778

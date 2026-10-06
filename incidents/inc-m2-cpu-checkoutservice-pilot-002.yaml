@@ -1,0 +1,46 @@
+incident_id: inc-m2-cpu-checkoutservice-pilot-002
+experiment_id: exp-cpu-checkoutservice-pilot
+run_id: m2-cpu-checkoutservice-pilot-002
+fault:
+  injected: true
+  type: cpu_saturation
+  cause_family: resource
+  injection_layer: platform_compute
+  scope_kind: service_instance
+  root_cause_service: checkoutservice
+  target_pod_uid: cb547f28-1878-444d-9fe0-8509965bc0da
+  chaos_mesh_object: stresschaos/m2-cpu-checkoutservice-pilot-002-cpu-saturation
+  started_at: '2026-09-20T05:59:32.182569+00:00'
+  ended_at: '2026-09-20T06:04:32.429569+00:00'
+  injector_status: succeeded
+workload:
+  profile: m2-cpu-checkoutservice-pilot
+  target_rps: 2
+  actual_rps: 2.166
+  dropped_iterations: 2
+impact:
+  confirmed: true
+  critical_failure: latency_increase
+  affected_endpoint: checkout
+  impact_started_at: '2026-09-20T06:01:35.491000+00:00'
+  evaluation_policy_version: v1
+recovery:
+  fault_removed_at: '2026-09-20T06:04:32.429569+00:00'
+  transaction_observation:
+    profile: m2-cpu-checkoutservice-pilot
+    first_passing_at: '2026-09-20T06:04:32.492Z'
+    stable_at: null
+    observation_status: fail
+  evaluation_policy_version: v1
+status: abnormal_impacted
+data_views:
+  raw: runs/m2-cpu-checkoutservice-pilot-002/raw/
+  canonical: runs/m2-cpu-checkoutservice-pilot-002/canonical/
+  re2_compatible: runs/m2-cpu-checkoutservice-pilot-002/re2-compatible/
+validity:
+  injector_succeeded: true
+  telemetry_present_all_signals: true
+  actual_rate_meets_minimum: true
+  dropped_iterations_under_threshold: true
+  raw_export_complete: true
+  is_valid_run: true

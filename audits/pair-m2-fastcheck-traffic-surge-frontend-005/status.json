@@ -1,0 +1,11 @@
+{
+  "complete": false,
+  "control_id": "m2-fastcheck-control-traffic-surge-005",
+  "fault_id": "m2-fastcheck-traffic-surge-frontend-005",
+  "steps": {
+    "m2-fastcheck-control-traffic-surge-005": 0,
+    "m2-fastcheck-traffic-surge-frontend-005": 1
+  },
+  "phase": "failed",
+  "updated_at": "2026-09-24T15:32:02.853115+00:00"
+}

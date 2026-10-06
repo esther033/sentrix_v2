@@ -1,0 +1,28 @@
+# NetworkChaos loss template -- dependency_edge scope, same direction
+# convention as network-delay.yaml.
+# {{NAME}}, {{SOURCE_SERVICE}}, {{TARGET_SERVICE}}, {{LOSS_PERCENT}}, {{DURATION}}
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: "{{NAME}}"
+  namespace: sentrix
+spec:
+  action: loss
+  mode: one
+  selector:
+    namespaces:
+      - sentrix
+    labelSelectors:
+      app: "{{SOURCE_SERVICE}}"
+  loss:
+    loss: "{{LOSS_PERCENT}}"
+    correlation: "25"
+  direction: to
+  target:
+    mode: one
+    selector:
+      namespaces:
+        - sentrix
+      labelSelectors:
+        app: "{{TARGET_SERVICE}}"
+  duration: "{{DURATION}}"

@@ -1,0 +1,105 @@
+{
+  "query_time": 1790012212.979,
+  "projection_time": 1790012213,
+  "checks": [
+    {
+      "service": "paymentservice",
+      "metric": "latency-50",
+      "prometheus": 0.005,
+      "projected": 0.005,
+      "match": true
+    },
+    {
+      "service": "productcatalogservice",
+      "metric": "latency-50",
+      "prometheus": 0.005,
+      "projected": 0.005,
+      "match": true
+    },
+    {
+      "service": "recommendationservice",
+      "metric": "latency-50",
+      "prometheus": 0.005,
+      "projected": 0.005,
+      "match": true
+    },
+    {
+      "service": "checkoutservice",
+      "metric": "latency-50",
+      "prometheus": 0.005865384615384615,
+      "projected": 0.005865384615384614,
+      "match": true
+    },
+    {
+      "service": "currencyservice",
+      "metric": "latency-50",
+      "prometheus": 0.005007911392405063,
+      "projected": 0.005007911392405063,
+      "match": true
+    },
+    {
+      "service": "emailservice",
+      "metric": "latency-50",
+      "prometheus": 0.005,
+      "projected": 0.005,
+      "match": true
+    },
+    {
+      "service": "frontend",
+      "metric": "latency-50",
+      "prometheus": 0.005759280089988751,
+      "projected": 0.005759280089988751,
+      "match": true
+    },
+    {
+      "service": "recommendationservice",
+      "metric": "latency-90",
+      "prometheus": 0.009000000000000001,
+      "projected": 0.009000000000000001,
+      "match": true
+    },
+    {
+      "service": "checkoutservice",
+      "metric": "latency-90",
+      "prometheus": 0.0227941176470588,
+      "projected": 0.0227941176470588,
+      "match": true
+    },
+    {
+      "service": "currencyservice",
+      "metric": "latency-90",
+      "prometheus": 0.009014240506329114,
+      "projected": 0.009014240506329114,
+      "match": true
+    },
+    {
+      "service": "emailservice",
+      "metric": "latency-90",
+      "prometheus": 0.009,
+      "projected": 0.009,
+      "match": true
+    },
+    {
+      "service": "frontend",
+      "metric": "latency-90",
+      "prometheus": 0.021926829268292633,
+      "projected": 0.021926829268292633,
+      "match": true
+    },
+    {
+      "service": "paymentservice",
+      "metric": "latency-90",
+      "prometheus": 0.009,
+      "projected": 0.009,
+      "match": true
+    },
+    {
+      "service": "productcatalogservice",
+      "metric": "latency-90",
+      "prometheus": 0.009000000000000001,
+      "projected": 0.009000000000000001,
+      "match": true
+    }
+  ],
+  "all_match": true
+}

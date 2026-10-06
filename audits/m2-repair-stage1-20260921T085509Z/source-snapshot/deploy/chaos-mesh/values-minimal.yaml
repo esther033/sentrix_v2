@@ -1,0 +1,47 @@
+# Chaos Mesh for a single-node Docker Desktop (kind-backed) cluster.
+# Runtime must be containerd (confirmed via `kubectl get nodes -o wide`:
+# CONTAINER-RUNTIME containerd://2.3.1), not the chart's docker default.
+# Dashboard disabled: memory budget on this node is already tight (see
+# docs/MILESTONE1.md Tempo OOM history), and experiments are driven by
+# applying Chaos Mesh CRDs directly via kubectl/scripts, not the web UI.
+dashboard:
+  create: false
+
+# Chart defaults leave these unbounded ({}), same class of risk that led
+# to Tempo's OOM history -- explicit conservative caps instead of
+# inheriting "no limit" on an already memory-tight node.
+controllerManager:
+  # Chart default is 3 (HA leader-election). Single-node pilot cluster
+  # with slow image pulls observed from ghcr.io (~20min for 3 redundant
+  # concurrent pulls of the same image) -- 1 replica is sufficient here
+  # and stops wasting bandwidth on duplicate pulls.
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: 25m
+      memory: 128Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi
+
+# NOTE: this key must appear exactly once in this file. A prior revision
+# had two separate `chaosDaemon:` top-level blocks (this one plus a
+# resources-only one added later) -- YAML silently lets the second one
+# win on a duplicate top-level key, which discarded `runtime`/
+# `socketPath` below without any error and left chaos-daemon running
+# with the chart's docker-runtime default against our containerd node
+# ("expected docker:// but got container..." in StressChaos's injection
+# events -- caught by manually smoke-testing a real fault injection
+# before trusting the deployment, not by the install succeeding).
+chaosDaemon:
+  # Runtime must be containerd (confirmed via `kubectl get nodes -o wide`:
+  # CONTAINER-RUNTIME containerd://2.3.1), not the chart's docker default.
+  runtime: containerd
+  socketPath: /run/containerd/containerd.sock
+  resources:
+    requests:
+      cpu: 50m
+      memory: 128Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi

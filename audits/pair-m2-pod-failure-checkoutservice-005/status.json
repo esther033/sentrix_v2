@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "control_id": "m2-control-pod-failure-005",
+  "fault_id": "m2-pod-failure-checkoutservice-005",
+  "steps": {
+    "m2-control-pod-failure-005": 0,
+    "m2-pod-failure-checkoutservice-005": 0
+  },
+  "phase": "finished",
+  "updated_at": "2026-09-26T08:20:24.258560+00:00",
+  "finished_at": "2026-09-26T08:47:13.203047+00:00"
+}

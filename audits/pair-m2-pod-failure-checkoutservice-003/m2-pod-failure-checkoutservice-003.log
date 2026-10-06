@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\Rehtse\SentriX\scripts\run-attended.py", line 247, in <module>
+    raise SystemExit(run(args))
+                     ^^^^^^^^^
+  File "C:\Users\Rehtse\SentriX\scripts\run-attended.py", line 97, in run
+    if not match["valid"]: raise ValueError("Control rejected: "+str(match["errors"]))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Control rejected: ['control traffic phase rates mismatch']

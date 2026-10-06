@@ -1,0 +1,20 @@
+{
+  "run_id": "m2-control-cpu-saturation-001",
+  "started_at": "2026-09-26T09:45:15.080324+00:00",
+  "errors": [],
+  "steps": {
+    "scripts/generate-run-manifest.py": 0,
+    "smoke/quality-check.py": 0,
+    "scripts/process-telemetry.py": 0
+  },
+  "recorder_pid": 18220,
+  "elapsed_s": 1140.8,
+  "heartbeat_at": "2026-09-26T10:09:31.058126+00:00",
+  "workload_rc": 0,
+  "workload_elapsed_s": 1142.7969999999623,
+  "phase": "finished",
+  "stage_pid": null,
+  "finished_at": "2026-09-26T10:09:34.991588+00:00",
+  "assessment_valid": true,
+  "complete": true
+}

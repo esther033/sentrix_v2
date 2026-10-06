@@ -1,0 +1,102 @@
+incident_id: inc-m2-cpu-checkoutservice-policy-v3-001
+experiment_id: exp-cpu-checkout-v2
+run_id: m2-cpu-checkoutservice-policy-v3-001
+control_run_id: m2-control-policy-v3-001
+baseline:
+  control_run_dir: C:\Users\Rehtse\SentriX\scripts\..\runs\m2-control-policy-v3-001
+  target_rps: 2
+  n_transactions: 1800
+  success_rate_pct: 100.0
+  p50_ms: 270
+  p99_ms: 555
+fault:
+  injected: true
+  type: cpu_saturation
+  cause_family: resource
+  injection_layer: platform_compute
+  scope_kind: service_instance
+  root_cause_service: checkoutservice
+  target_pod_uid: cb547f28-1878-444d-9fe0-8509965bc0da
+  chaos_mesh_object: stresschaos/m2-cpu-checkoutservice-policy-v3-001-cpu
+  started_at: '2026-09-22T06:53:44.945772+00:00'
+  ended_at: '2026-09-22T06:58:43.077333+00:00'
+  removal_confidence: confirmed
+  injector_status: succeeded
+workload:
+  profile: m2-cpu-checkoutservice-pilot
+  target_rps: 2
+  actual_rps: 2.001
+  dropped_iterations: 0
+impact:
+  confirmed: false
+  critical_failure: null
+  affected_endpoint: checkout
+  impact_started_at: null
+  evaluation_policy_version: v3
+recovery:
+  fault_removed_at: '2026-09-22T06:58:43.077333+00:00'
+  transaction_observation:
+    profile: m2-cpu-checkoutservice-pilot
+    first_passing_at: '2026-09-22T06:58:43.280Z'
+    stable_at: '2026-09-22T06:58:43.280Z'
+    observation_status: pass
+  evaluation_policy_version: v3
+status: fault_active_no_impact
+data_views: {}
+data_generation: v2
+data_validation:
+  run:
+    complete: false
+    raw_export_complete: false
+    error: Missing/failed or mismatched pipeline generation
+    views: {}
+  control:
+    complete: true
+    raw_export_complete: true
+    views:
+      raw: raw-v2
+      canonical: canonical-v2-57f0809bd95a
+      re2_compatible: re2-v2-57f0809bd95a
+validity:
+  injector_succeeded: true
+  removal_confirmed: true
+  telemetry_present_all_signals: true
+  actual_rate_meets_minimum: false
+  runtime_assessment:
+    valid: false
+    errors:
+    - data views incomplete
+    actual_rps: 2.0
+    elapsed_s: 1139.5
+    started_at: '2026-09-22T06:46:42.280Z'
+    ended_at: '2026-09-22T07:05:41.780Z'
+    fingerprint: 0898f057969c1363667ec160c50b8126c5e5d7eaa650f774e54dbd8ec3a7d5b5
+    profile:
+      profile_name: m2-cpu-checkoutservice-pilot
+      description: 'M2 pilot: single CPU saturation fault on checkoutservice (tracing-instrumented),
+        workload matching M1B''s main profile (2 rps) so runs/m1b-main-001''s steady-state
+        baseline is a valid sanity-check reference.'
+      target_rps: 2
+      time_unit: 1s
+      duration: 19m
+      warmup_seconds: 120
+      baseline_seconds: 300
+      fault_seconds: 300
+      recovery_seconds: 300
+      cooldown_seconds: 120
+      pre_allocated_vus: 10
+      max_vus: 50
+      stage_timeout: 5s
+      fault:
+        type: cpu_saturation
+        template: deploy/chaos-mesh/faults/cpu-saturation.yaml
+        root_cause_service: checkoutservice
+        params: {}
+  control_match:
+    valid: true
+    errors: []
+  dropped_iterations_under_threshold: true
+  raw_export_complete: false
+  data_views_complete: false
+  control_data_views_complete: true
+  is_valid_run: false

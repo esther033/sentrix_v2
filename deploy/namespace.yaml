@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sentrix
+  labels:
+    app.kubernetes.io/part-of: sentrix
+    deployment.environment.name: local-dev

@@ -1,0 +1,28 @@
+{
+  "milestone": "M2",
+  "complete": false,
+  "updated_at": "2026-09-26T10:36:07Z",
+  "dataset_status": "partial_valid_dataset",
+  "usable_incidents": [
+    {"run_id": "m2-traffic-surge-frontend-003", "fault_type": "traffic_surge", "status": "recovered", "is_valid_run": true},
+    {"run_id": "m2-pod-failure-checkoutservice-005", "fault_type": "pod_failure", "status": "recovered", "is_valid_run": true},
+    {"run_id": "m2-cpu-checkoutservice-003", "fault_type": "cpu_saturation", "status": "fault_active_no_impact", "is_valid_run": true}
+  ],
+  "blocked_faults": {
+    "network_delay": "Docker Desktop/WSL kernel lacks the netem traffic-control qdisc; the approved pod-wide probe failed before injection.",
+    "packet_loss": "Uses the same unavailable netem qdisc, so no duplicate probe was run."
+  },
+  "excluded_runs": {
+    "m2-control-traffic-surge-002": "Interrupted incomplete export; not usable as a complete multimodal control.",
+    "m2-traffic-surge-frontend-001": "Workload completed, but telemetry export did not complete before a long unobserved gap and backend retention expiry.",
+    "m2-control-pod-failure-004": "Views completed, but its supervisor was deliberately stopped before fault; a host restart then changed the environment. Do not use as the matched control.",
+    "m2-control-pod-failure-002": "Pre-injection Kubernetes configuration access failure.",
+    "m2-pod-failure-checkoutservice-003": "Pre-injection control workload-definition mismatch."
+  },
+  "limitations": [
+    "Known-trace API retrieval is not proof of every original span ingested.",
+    "Source invalid timestamp spans are retained in canonical and excluded from RE2 with loss counts.",
+    "One valid run per fault type does not establish reproducibility or provide a sufficient training set.",
+    "Network delay and packet loss require a Docker Desktop/WSL kernel with the netem traffic-control qdisc before formal experiments can run."
+  ]
+}

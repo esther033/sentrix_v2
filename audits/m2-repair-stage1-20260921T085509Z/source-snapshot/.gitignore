@@ -1,0 +1,14 @@
+# Machine-local helper (contains an absolute local path to helm.exe)
+scripts/helm-path.sh
+
+# Scratch/dev-only runs (prefixed smoke-dev- or similar); real M1A/M1B runs
+# under runs/<run_id>/ ARE tracked -- raw export is the reproducibility
+# artifact.
+runs/smoke-dev-*/
+
+# Downloaded RE2-OB sample used to validate docs/RE2_SCHEMA.md -- public
+# dataset, not SentriX's own data, re-downloadable, not committed.
+.re2-sample/
+
+__pycache__/
+*.pyc

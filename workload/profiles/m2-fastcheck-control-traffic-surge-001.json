@@ -1,0 +1,23 @@
+{
+  "profile_name": "m2-fastcheck-control-traffic-surge-001",
+  "description": "Four-minute non-dataset control used only to verify the traffic-surge export path.",
+  "target_rps": 2,
+  "time_unit": "1s",
+  "duration": "4m",
+  "warmup_seconds": 30,
+  "baseline_seconds": 60,
+  "fault_seconds": 60,
+  "recovery_seconds": 60,
+  "cooldown_seconds": 30,
+  "traffic_phase_rps": {
+    "warmup": 2,
+    "baseline": 2,
+    "fault": 2,
+    "recovery": 2,
+    "cooldown": 2
+  },
+  "pre_allocated_vus": 15,
+  "max_vus": 80,
+  "stage_timeout": "5s",
+  "trace_workers": 2
+}

@@ -1,0 +1,21 @@
+{
+  "profile_name": "m2-cpu-checkoutservice-fastcheck",
+  "description": "Internal dev-only fast-cycle version of m2-cpu-checkoutservice-pilot.json (4min total vs 19min), used ONLY to verify the run-fault-experiment.py / export-telemetry.py / generate-incident-record.py code fixes complete correctly within a single attended sitting, given repeated host-sleep interruptions during the full 19min pilot. NOT a scientifically meaningful fault duration -- not part of the M2 experiment set.",
+  "target_rps": 2,
+  "time_unit": "1s",
+  "duration": "4m",
+  "warmup_seconds": 30,
+  "baseline_seconds": 60,
+  "fault_seconds": 60,
+  "recovery_seconds": 60,
+  "cooldown_seconds": 30,
+  "pre_allocated_vus": 10,
+  "max_vus": 50,
+  "stage_timeout": "5s",
+  "fault": {
+    "type": "cpu_saturation",
+    "template": "deploy/chaos-mesh/faults/cpu-saturation.yaml",
+    "root_cause_service": "checkoutservice",
+    "params": {}
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "observed_at": "2026-09-23T07:47:24.117209+00:00",
+  "response": {
+    "apiVersion": "chaos-mesh.org/v1alpha1",
+    "kind": "NetworkChaos",
+    "metadata": {
+      "annotations": {
+        "experiment.chaos-mesh.org/pause": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"chaos-mesh.org/v1alpha1\",\"kind\":\"NetworkChaos\",\"metadata\":{\"annotations\":{},\"name\":\"m2-network-delay-frontend-checkout-001-fault\",\"namespace\":\"sentrix\"},\"spec\":{\"action\":\"delay\",\"delay\":{\"correlation\":\"25\",\"jitter\":\"200ms\",\"latency\":\"2000ms\"},\"direction\":\"to\",\"duration\":\"300s\",\"mode\":\"one\",\"selector\":{\"labelSelectors\":{\"app\":\"frontend\"},\"namespaces\":[\"sentrix\"]},\"target\":{\"mode\":\"one\",\"selector\":{\"labelSelectors\":{\"app\":\"checkoutservice\"},\"namespaces\":[\"sentrix\"]}}}}\n"
+      },
+      "creationTimestamp": "2026-09-23T07:45:19Z",
+      "finalizers": [
+        "chaos-mesh/records"
+      ],
+      "generation": 29,
+      "name": "m2-network-delay-frontend-checkout-001-fault",
+      "namespace": "sentrix",
+      "resourceVersion": "431814",
+      "uid": "8419138e-b8d3-4f5b-bc65-9e7476f32a26"
+    },
+    "spec": {
+      "action": "delay",
+      "delay": {
+        "correlation": "25",
+        "jitter": "200ms",
+        "latency": "2000ms"
+      },
+      "direction": "to",
+      "duration": "300s",
+      "mode": "one",
+      "selector": {
+        "labelSelectors": {
+          "app": "frontend"
+        },
+        "namespaces": [
+          "sentrix"
+        ]
+      },
+      "target": {
+        "mode": "one",
+        "selector": {
+          "labelSelectors": {
+            "app": "checkoutservice"
+          },
+          "namespaces": [
+            "sentrix"
+          ]
+        }
+      }
+    },
+    "status": {
+      "conditions": [
+        {
+          "status": "False",
+          "type": "AllInjected"
+        },
+        {
+          "status": "False",
+          "type": "AllRecovered"
+        },
+        {
+          "status": "True",
+          "type": "Paused"
+        },
+        {
+          "status": "True",
+          "type": "Selected"
+        }
+      ],
+      "experiment": {
+        "containerRecords": [
+          {
+            "events": [
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:22Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:22Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:22Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:22Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:22Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:22Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:23Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:23Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:23Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:24Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:24Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:27Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:27Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:37Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:37Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:46:18Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:46:18Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:46:20Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:46:20Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:46:20Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:46:21Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/frontend-67b8d96867-78v52: unable to flush ip sets for pod frontend-67b8d96867-78v52",
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:46:21Z",
+                "type": "Failed"
+              }
+            ],
+            "id": "sentrix/frontend-67b8d96867-78v52",
+            "injectedCount": 0,
+            "phase": "Not Injected/Wait",
+            "recoveredCount": 0,
+            "selectorKey": "."
+          },
+          {
+            "events": [
+              {
+                "operation": "Apply",
+                "timestamp": "2026-09-23T07:45:20Z",
+                "type": "Succeeded"
+              },
+              {
+                "operation": "Recover",
+                "timestamp": "2026-09-23T07:46:21Z",
+                "type": "Succeeded"
+              }
+            ],
+            "id": "sentrix/checkoutservice-74dd7db7cb-zv46k",
+            "injectedCount": 1,
+            "phase": "Not Injected",
+            "recoveredCount": 1,
+            "selectorKey": ".Target"
+          }
+        ],
+        "desiredPhase": "Stop"
+      },
+      "instances": {
+        "sentrix/checkoutservice-74dd7db7cb-zv46k": 1,
+        "sentrix/frontend-67b8d96867-78v52": 1
+      }
+    }
+  }
+}

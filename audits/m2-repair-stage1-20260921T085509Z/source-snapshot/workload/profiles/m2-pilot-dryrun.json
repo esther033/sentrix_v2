@@ -1,0 +1,12 @@
+{
+  "profile_name": "m2-pilot-dryrun",
+  "description": "Tempo stability dry-run at the M2 CPU-saturation pilot's planned scale (2 rps, ~19min) BEFORE injecting any real fault -- isolates whether Tempo can sustain this load/duration on its own.",
+  "target_rps": 2,
+  "time_unit": "1s",
+  "duration": "19m",
+  "warmup_seconds": 120,
+  "cooldown_seconds": 120,
+  "pre_allocated_vus": 10,
+  "max_vus": 50,
+  "stage_timeout": "5s"
+}

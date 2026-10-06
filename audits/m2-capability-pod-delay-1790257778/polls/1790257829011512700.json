@@ -1,0 +1,173 @@
+{
+  "observed_at": "2026-09-24T13:50:29.011512+00:00",
+  "response": {
+    "apiVersion": "chaos-mesh.org/v1alpha1",
+    "kind": "NetworkChaos",
+    "metadata": {
+      "annotations": {
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"chaos-mesh.org/v1alpha1\",\"kind\":\"NetworkChaos\",\"metadata\":{\"annotations\":{},\"name\":\"m2-capability-pod-delay-1790257778\",\"namespace\":\"sentrix\"},\"spec\":{\"action\":\"delay\",\"delay\":{\"correlation\":\"0\",\"jitter\":\"10ms\",\"latency\":\"100ms\"},\"duration\":\"20s\",\"mode\":\"one\",\"selector\":{\"labelSelectors\":{\"app\":\"checkoutservice\"},\"namespaces\":[\"sentrix\"]}}}\n"
+      },
+      "creationTimestamp": "2026-09-24T13:49:39Z",
+      "finalizers": [
+        "chaos-mesh/records"
+      ],
+      "generation": 22,
+      "name": "m2-capability-pod-delay-1790257778",
+      "namespace": "sentrix",
+      "resourceVersion": "500318",
+      "uid": "1e1f4bdc-a224-4371-99ec-f7631fb17774"
+    },
+    "spec": {
+      "action": "delay",
+      "delay": {
+        "correlation": "0",
+        "jitter": "10ms",
+        "latency": "100ms"
+      },
+      "direction": "to",
+      "duration": "20s",
+      "mode": "one",
+      "selector": {
+        "labelSelectors": {
+          "app": "checkoutservice"
+        },
+        "namespaces": [
+          "sentrix"
+        ]
+      }
+    },
+    "status": {
+      "conditions": [
+        {
+          "status": "False",
+          "type": "Paused"
+        },
+        {
+          "status": "True",
+          "type": "Selected"
+        },
+        {
+          "status": "False",
+          "type": "AllInjected"
+        },
+        {
+          "status": "False",
+          "type": "AllRecovered"
+        }
+      ],
+      "experiment": {
+        "containerRecords": [
+          {
+            "events": [
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:41Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:41Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:41Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:41Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:41Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:41Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:41Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:41Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:42Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:42Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:43Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:43Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:49Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:49:49Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:50:09Z",
+                "type": "Failed"
+              },
+              {
+                "message": "failed to apply for pod sentrix/checkoutservice-74dd7db7cb-zv46k: unable to set tcs for pod checkoutservice-74dd7db7cb-zv46k",
+                "operation": "Apply",
+                "timestamp": "2026-09-24T13:50:09Z",
+                "type": "Failed"
+              }
+            ],
+            "id": "sentrix/checkoutservice-74dd7db7cb-zv46k",
+            "injectedCount": 0,
+            "phase": "Not Injected/Wait",
+            "recoveredCount": 0,
+            "selectorKey": "."
+          }
+        ],
+        "desiredPhase": "Stop"
+      },
+      "instances": {
+        "sentrix/checkoutservice-74dd7db7cb-zv46k": 1
+      }
+    }
+  }
+}

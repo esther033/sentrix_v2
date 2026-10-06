@@ -1,0 +1,17 @@
+# Deliberately pod-wide egress: includes telemetry and probe responses.
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: "{{NAME}}"
+  namespace: sentrix
+spec:
+  action: loss
+  mode: one
+  selector:
+    namespaces: [sentrix]
+    labelSelectors:
+      app: "{{TARGET_SERVICE}}"
+  loss:
+    loss: "{{LOSS_PERCENT}}"
+    correlation: "0"
+  duration: "{{DURATION}}"

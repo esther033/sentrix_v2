@@ -1,0 +1,47 @@
+# Grafana Tempo, single-binary mode.
+#
+# Found during the M1B low-traffic 30-minute control run: with a 500Mi
+# memory limit, tempo-0 was repeatedly OOMKilled (exit code 137,
+# "reason":"OOMKilled" confirmed via `kubectl get pod tempo-0 -o
+# jsonpath='{.status.containerStatuses[0].lastState}'), 7 times over
+# ~4 hours of cumulative pilot+M1B traffic. Each restart, combined with
+# persistence being disabled (no volume at all backing
+# storage.trace.local.path, so data lived on the container's writable
+# layer), wiped all previously-ingested trace blocks -- which is why
+# runs/m1b-low-001's quality-check couldn't find traces for its earliest
+# sampled transactions (404) despite the collector having successfully
+# exported them at the time. Fixed two ways: raised the memory limit
+# (500Mi was simply too little for continuous ingestion over 30+ minutes)
+# AND enabled a small persistent volume, so a future restart for any
+# other reason doesn't erase the run's data mid-flight.
+replicas: 1
+
+tempo:
+  # Reduced from 6h: this pilot cluster's host sleeps/restarts
+  # periodically (see docs/MILESTONE1.md known limitations), and each
+  # unclean shutdown leaves WAL/blocks that must be replayed on the next
+  # start -- the longer the retention, the more accumulates before a
+  # crash and the worse the replay-driven OOM gets. 1h is still well
+  # over any single experiment run's duration (Milestone 2 runs are
+  # <=1h each per the standard protocol), so nothing needed for an
+  # in-progress or just-finished run's analysis is lost.
+  retention: 1h
+  resources:
+    requests:
+      cpu: 100m
+      memory: 400Mi
+    limits:
+      cpu: 500m
+      # 1Gi (the previous value) was still not enough: OOMKilled again
+      # partway through the high-normal (5 rps) 30-minute control run,
+      # confirmed via containerStatuses[0].lastState.terminated.reason.
+      # low (0.5 rps) and main (2 rps) passed fine at 1Gi -- this scales
+      # with trace ingestion rate, not a fixed leak.
+      memory: 2Gi
+  # default receivers already include otlp grpc:4317 / http:4318, which is
+  # what the otel-collector gateway exports to (see
+  # deploy/otel-collector/gateway-values.yaml exporters.otlp/tempo).
+
+persistence:
+  enabled: true
+  size: 3Gi

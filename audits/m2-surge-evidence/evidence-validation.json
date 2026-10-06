@@ -1,0 +1,44 @@
+{
+  "started_at": "2026-09-24T06:03:51.761000+00:00",
+  "ended_at": "2026-09-24T06:04:21.762000+00:00",
+  "removal_confidence": "confirmed",
+  "injector_status": "succeeded",
+  "timing_source": "k6 scenario schedule corroborated by observed transaction arrivals",
+  "phase_evidence": {
+    "warmup": {
+      "started_at": "2026-09-24T06:02:51.757000+00:00",
+      "ended_at": "2026-09-24T06:03:21.757000+00:00",
+      "target_rps": 2.0,
+      "actual_rps": 2.0,
+      "count": 60
+    },
+    "baseline": {
+      "started_at": "2026-09-24T06:03:21.760000+00:00",
+      "ended_at": "2026-09-24T06:03:51.760000+00:00",
+      "target_rps": 2.0,
+      "actual_rps": 2.0,
+      "count": 60
+    },
+    "fault": {
+      "started_at": "2026-09-24T06:03:51.761000+00:00",
+      "ended_at": "2026-09-24T06:04:21.761000+00:00",
+      "target_rps": 5.0,
+      "actual_rps": 5.0,
+      "count": 150
+    },
+    "recovery": {
+      "started_at": "2026-09-24T06:04:21.762000+00:00",
+      "ended_at": "2026-09-24T06:04:51.762000+00:00",
+      "target_rps": 2.0,
+      "actual_rps": 2.0,
+      "count": 60
+    },
+    "cooldown": {
+      "started_at": "2026-09-24T06:04:51.764000+00:00",
+      "ended_at": "2026-09-24T06:05:21.764000+00:00",
+      "target_rps": 2.0,
+      "actual_rps": 2.0,
+      "count": 60
+    }
+  }
+}

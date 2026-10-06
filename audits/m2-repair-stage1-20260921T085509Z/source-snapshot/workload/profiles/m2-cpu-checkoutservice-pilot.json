@@ -1,0 +1,21 @@
+{
+  "profile_name": "m2-cpu-checkoutservice-pilot",
+  "description": "M2 pilot: single CPU saturation fault on checkoutservice (tracing-instrumented), workload matching M1B's main profile (2 rps) so runs/m1b-main-001's steady-state baseline is a valid sanity-check reference.",
+  "target_rps": 2,
+  "time_unit": "1s",
+  "duration": "19m",
+  "warmup_seconds": 120,
+  "baseline_seconds": 300,
+  "fault_seconds": 300,
+  "recovery_seconds": 300,
+  "cooldown_seconds": 120,
+  "pre_allocated_vus": 10,
+  "max_vus": 50,
+  "stage_timeout": "5s",
+  "fault": {
+    "type": "cpu_saturation",
+    "template": "deploy/chaos-mesh/faults/cpu-saturation.yaml",
+    "root_cause_service": "checkoutservice",
+    "params": {}
+  }
+}

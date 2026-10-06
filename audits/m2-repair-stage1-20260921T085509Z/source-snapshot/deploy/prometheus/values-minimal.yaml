@@ -1,0 +1,52 @@
+# Minimal Prometheus (NOT kube-prometheus-stack) for a Docker Desktop
+# single-node pilot: short retention, no PVC (emptyDir), Grafana and
+# Alertmanager disabled. Scrapes the otel-collector gateway's RED metrics
+# (spanmetrics connector output, exposed via prometheus exporter on :8889 --
+# see deploy/otel-collector/gateway-values.yaml) through the chart's default
+# annotation-based kubernetes-pods scrape job. kube-state-metrics stays on
+# for Deployment/Pod object state; node-exporter is off (host-level fault
+# is out of scope for Milestone 1).
+alertmanager:
+  enabled: false
+
+# Disabled: host-level metrics are unused -- Milestone 2's fault set is
+# service/pod/edge-scoped (CPU saturation, network delay/loss, pod
+# failure, traffic surge), not host-wide, and we already get
+# container-level CPU/mem from cAdvisor (kubernetes-nodes-cadvisor job)
+# without it. Freeing this up matters: node memory limits are already
+# near capacity on this single Docker Desktop node (see Tempo's repeated
+# OOM history in docs/MILESTONE1.md).
+prometheus-node-exporter:
+  enabled: false
+
+kube-state-metrics:
+  enabled: true
+
+server:
+  retention: "6h"
+  persistentVolume:
+    enabled: false
+  # Milestone 2: fault experiments (CPU saturation, network delay/loss,
+  # pod failure, traffic surge) can move on timescales of tens of
+  # seconds, and RE2-OB's own metrics are natively 1Hz. The chart's
+  # default 1m global scrape_interval is far too coarse to see that --
+  # confirmed via `kubectl port-forward` + `/api/v1/status/config` that
+  # container_cpu_usage_seconds_total / container_memory_working_set_bytes
+  # (cAdvisor, via the default kubernetes-nodes-cadvisor job) were
+  # already being collected, just at 1m resolution. Tightened to 5s.
+  # This is still coarser than RE2-OB's native 1Hz -- see
+  # docs/RE2_SCHEMA.md for the resampling rule used to bridge the two.
+  global:
+    scrape_interval: 5s
+    scrape_timeout: 4s
+    evaluation_interval: 5s
+  resources:
+    requests:
+      cpu: 150m
+      memory: 384Mi
+    limits:
+      cpu: 750m
+      memory: 768Mi
+
+prometheus-pushgateway:
+  enabled: false

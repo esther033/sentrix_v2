@@ -1,0 +1,20 @@
+{
+  "run_id": "m2-fastcheck-control-traffic-surge-006",
+  "started_at": "2026-09-25T03:05:27.952094+00:00",
+  "errors": [],
+  "steps": {
+    "scripts/generate-run-manifest.py": 0,
+    "smoke/quality-check.py": 0,
+    "scripts/process-telemetry.py": 0
+  },
+  "recorder_pid": 25684,
+  "elapsed_s": 239.45,
+  "heartbeat_at": "2026-09-25T03:12:47.324261+00:00",
+  "workload_rc": 0,
+  "workload_elapsed_s": 241.45300000000861,
+  "phase": "finished",
+  "stage_pid": null,
+  "finished_at": "2026-09-25T03:12:50.056078+00:00",
+  "assessment_valid": true,
+  "complete": true
+}

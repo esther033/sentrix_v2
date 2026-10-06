@@ -1,0 +1,10 @@
+{
+  "complete": false,
+  "action": "delay",
+  "scope_kind": "service_instance",
+  "name": "m2-capability-pod-delay-1790257778",
+  "error": "Probe injection/removal not both observed",
+  "injected": false,
+  "recovered": false,
+  "finished_at": "2026-09-24T13:52:17.498650+00:00"
+}

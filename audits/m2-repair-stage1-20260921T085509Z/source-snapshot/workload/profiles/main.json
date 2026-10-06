@@ -1,0 +1,12 @@
+{
+  "profile_name": "main",
+  "description": "M1B no-fault control run, main/nominal traffic. Only run after the pilot profile has passed the M1A gate.",
+  "target_rps": 2,
+  "time_unit": "1s",
+  "duration": "30m",
+  "warmup_seconds": 600,
+  "cooldown_seconds": 300,
+  "pre_allocated_vus": 10,
+  "max_vus": 50,
+  "stage_timeout": "5s"
+}

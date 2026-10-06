@@ -1,0 +1,157 @@
+# Adds OTLP trace export env vars to the Online Boutique services that have
+# OpenTelemetry SDK wiring built in (checkoutservice, currencyservice,
+# emailservice, frontend, paymentservice, productcatalogservice,
+# recommendationservice).
+#
+# adservice, cartservice, and shippingservice have NO tracing instrumentation
+# in this pinned version (v0.9.0 / d138db567079e2ef982d46b2993f8349cb18e2b2)
+# and will not appear in traces. This is a documented gap, not a collector
+# misconfiguration -- see docs/MILESTONE1.md.
+#
+# COLLECTOR_SERVICE_ADDR is a legacy-named env var from the app's source
+# (see src/checkoutservice/main.go initTracing()) that the app's OTLP/gRPC
+# exporter connects to directly. It points at the OTel Collector gateway
+# Service's OTLP gRPC receiver (port 4317) inside the sentrix namespace.
+#
+# OTEL_SERVICE_NAME / OTEL_RESOURCE_ATTRIBUTES: none of these services call
+# sdktrace.WithResource(...) (verified against src/checkoutservice/main.go
+# initTracing()), so without an explicit OTEL_SERVICE_NAME every service's
+# traces would resolve to the SDK's fallback "unknown_service:<binary name>"
+# -- and since all 7 containers run a binary literally named "server", they
+# would all collide on the SAME fallback service.name. This env var is what
+# makes canonical_service_id resolution (priority 1: service.namespace +
+# service.name, see identity/service-alias-map.yaml) actually work for
+# traces; without it every one of these services would fail identity
+# resolution, not just be "enriched" incorrectly.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkoutservice
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          env:
+            - name: ENABLE_TRACING
+              value: "1"
+            - name: COLLECTOR_SERVICE_ADDR
+              value: "otel-gateway-opentelemetry-collector.sentrix.svc.cluster.local:4317"
+            - name: OTEL_SERVICE_NAME
+              value: "checkoutservice"
+            - name: OTEL_RESOURCE_ATTRIBUTES
+              value: "service.namespace=sentrix,deployment.environment.name=local-dev"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: currencyservice
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          env:
+            - name: ENABLE_TRACING
+              value: "1"
+            - name: COLLECTOR_SERVICE_ADDR
+              value: "otel-gateway-opentelemetry-collector.sentrix.svc.cluster.local:4317"
+            - name: OTEL_SERVICE_NAME
+              value: "currencyservice"
+            - name: OTEL_RESOURCE_ATTRIBUTES
+              value: "service.namespace=sentrix,deployment.environment.name=local-dev"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emailservice
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          env:
+            - name: ENABLE_TRACING
+              value: "1"
+            - name: COLLECTOR_SERVICE_ADDR
+              value: "otel-gateway-opentelemetry-collector.sentrix.svc.cluster.local:4317"
+            - name: OTEL_SERVICE_NAME
+              value: "emailservice"
+            - name: OTEL_RESOURCE_ATTRIBUTES
+              value: "service.namespace=sentrix,deployment.environment.name=local-dev"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          env:
+            - name: ENABLE_TRACING
+              value: "1"
+            - name: COLLECTOR_SERVICE_ADDR
+              value: "otel-gateway-opentelemetry-collector.sentrix.svc.cluster.local:4317"
+            - name: OTEL_SERVICE_NAME
+              value: "frontend"
+            - name: OTEL_RESOURCE_ATTRIBUTES
+              value: "service.namespace=sentrix,deployment.environment.name=local-dev"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paymentservice
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          env:
+            - name: ENABLE_TRACING
+              value: "1"
+            - name: COLLECTOR_SERVICE_ADDR
+              value: "otel-gateway-opentelemetry-collector.sentrix.svc.cluster.local:4317"
+            - name: OTEL_SERVICE_NAME
+              value: "paymentservice"
+            - name: OTEL_RESOURCE_ATTRIBUTES
+              value: "service.namespace=sentrix,deployment.environment.name=local-dev"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productcatalogservice
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          env:
+            - name: ENABLE_TRACING
+              value: "1"
+            - name: COLLECTOR_SERVICE_ADDR
+              value: "otel-gateway-opentelemetry-collector.sentrix.svc.cluster.local:4317"
+            - name: OTEL_SERVICE_NAME
+              value: "productcatalogservice"
+            - name: OTEL_RESOURCE_ATTRIBUTES
+              value: "service.namespace=sentrix,deployment.environment.name=local-dev"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recommendationservice
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          env:
+            - name: ENABLE_TRACING
+              value: "1"
+            - name: COLLECTOR_SERVICE_ADDR
+              value: "otel-gateway-opentelemetry-collector.sentrix.svc.cluster.local:4317"
+            - name: OTEL_SERVICE_NAME
+              value: "recommendationservice"
+            - name: OTEL_RESOURCE_ATTRIBUTES
+              value: "service.namespace=sentrix,deployment.environment.name=local-dev"

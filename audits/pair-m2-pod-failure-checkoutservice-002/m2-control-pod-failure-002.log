@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\Users\Rehtse\SentriX\scripts\run-attended.py", line 247, in <module>
+    raise SystemExit(run(args))
+                     ^^^^^^^^^
+  File "C:\Users\Rehtse\SentriX\scripts\run-attended.py", line 90, in run
+    no_active_chaos()
+  File "C:\Users\Rehtse\SentriX\scripts\run-attended.py", line 52, in no_active_chaos
+    data = json.loads(kube("get","stresschaos,networkchaos,podchaos","-n","sentrix","-o","json"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rehtse\SentriX\scripts\run-attended.py", line 29, in kube
+    raise RuntimeError(p.stderr)
+RuntimeError: error: error loading config file "C:\Users\Rehtse\.kube\config": open C:\Users\Rehtse\.kube\config: Access is denied.
+

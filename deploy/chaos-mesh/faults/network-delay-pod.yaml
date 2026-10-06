@@ -1,0 +1,18 @@
+# Deliberately pod-wide egress: no target/ipset filter. Not a dependency edge.
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: "{{NAME}}"
+  namespace: sentrix
+spec:
+  action: delay
+  mode: one
+  selector:
+    namespaces: [sentrix]
+    labelSelectors:
+      app: "{{TARGET_SERVICE}}"
+  delay:
+    latency: "{{LATENCY}}"
+    jitter: "{{JITTER}}"
+    correlation: "0"
+  duration: "{{DURATION}}"

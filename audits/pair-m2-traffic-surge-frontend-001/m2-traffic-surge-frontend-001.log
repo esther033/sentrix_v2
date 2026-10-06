@@ -1,0 +1,21 @@
+{
+  "run_id": "m2-traffic-surge-frontend-001",
+  "started_at": "2026-09-24T06:34:13.319715+00:00",
+  "errors": [
+    "Postprocessing: Postprocessing deadline: scripts/process-telemetry.py"
+  ],
+  "steps": {
+    "scripts/generate-run-manifest.py": 0,
+    "smoke/quality-check.py": 0
+  },
+  "recorder_pid": 16700,
+  "elapsed_s": 1140.17,
+  "heartbeat_at": "2026-09-24T08:44:53.139870+00:00",
+  "fault_apply_elapsed": 421.89100000000326,
+  "workload_rc": 0,
+  "workload_elapsed_s": 1142.1719999999914,
+  "phase": "failed",
+  "stage_pid": 24564,
+  "complete": false,
+  "finished_at": "2026-09-24T08:44:54.154073+00:00"
+}

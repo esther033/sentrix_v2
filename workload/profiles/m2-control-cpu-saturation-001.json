@@ -1,0 +1,23 @@
+{
+  "profile_name": "m2-control-cpu-saturation-001",
+  "description": "Matched no-fault control for the M2 checkoutservice CPU-saturation experiment.",
+  "target_rps": 2,
+  "time_unit": "1s",
+  "duration": "19m",
+  "warmup_seconds": 120,
+  "baseline_seconds": 300,
+  "fault_seconds": 300,
+  "recovery_seconds": 300,
+  "cooldown_seconds": 120,
+  "traffic_phase_rps": {
+    "warmup": 2,
+    "baseline": 2,
+    "fault": 2,
+    "recovery": 2,
+    "cooldown": 2
+  },
+  "pre_allocated_vus": 10,
+  "max_vus": 50,
+  "stage_timeout": "5s",
+  "trace_workers": 2
+}

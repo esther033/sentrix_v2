@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "control_id": "m2-control-traffic-surge-005",
+  "fault_id": "m2-traffic-surge-frontend-003",
+  "steps": {
+    "m2-control-traffic-surge-005": 0,
+    "m2-traffic-surge-frontend-003": 0
+  },
+  "phase": "finished",
+  "updated_at": "2026-09-26T03:27:41.644177+00:00",
+  "finished_at": "2026-09-26T04:04:23.238825+00:00"
+}

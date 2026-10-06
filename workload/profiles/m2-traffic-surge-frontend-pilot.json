@@ -1,0 +1,36 @@
+{
+  "profile_name": "m2-traffic-surge-frontend-pilot",
+  "description": "M2 workload fault: entrypoint traffic rises from 2 rps to 5 rps for five minutes, then returns to 2 rps.",
+  "target_rps": 2,
+  "time_unit": "1s",
+  "duration": "19m",
+  "warmup_seconds": 120,
+  "baseline_seconds": 300,
+  "fault_seconds": 300,
+  "recovery_seconds": 300,
+  "cooldown_seconds": 120,
+  "traffic_phase_rps": {
+    "warmup": 2,
+    "baseline": 2,
+    "fault": 5,
+    "recovery": 2,
+    "cooldown": 2
+  },
+  "control_phase_rps": {
+    "warmup": 2,
+    "baseline": 2,
+    "fault": 2,
+    "recovery": 2,
+    "cooldown": 2
+  },
+  "pre_allocated_vus": 15,
+  "max_vus": 80,
+  "stage_timeout": "5s",
+  "trace_workers": 2,
+  "fault": {
+    "type": "traffic_surge",
+    "root_cause_service": "frontend",
+    "scope_kind": "entrypoint",
+    "scope_description": "The k6 transaction arrival schedule increases from 2 rps to 5 rps only during the fault phase."
+  }
+}
